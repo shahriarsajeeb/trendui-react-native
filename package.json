@@ -1,0 +1,42 @@
+{
+  "name": "@trendui/react-native",
+  "version": "1.5.0",
+  "main": "index.ts",
+  "type": "module",
+  "description": "A modern UI component library for React Native",
+  "license": "MIT",
+  "keywords": [
+    "react-native",
+    "ui-library",
+    "components",
+    "trendui"
+  ],
+  "scripts": {
+    "start": "expo start",
+    "postinstall": "node scripts/copy-components.js"
+  },
+  "files": [
+    "src",
+    "scripts",
+    "tailwind.config.js",
+    "README.md",
+    "babel.config.cjs",
+    "metro.config.js"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "tailwindcss": "3.4.16",
+    "twrnc": "^4.6.0"
+  },
+  "peerDependencies": {
+    "nativewind": "4.1.23",
+    "react-native": "0.76.3",
+    "expo": "~52.0.17",
+    "react": "18.3.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}
