@@ -1,0 +1,81 @@
+/* General Markdown Styles */
+.markdown-body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+/* Headings */
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  color: #1a202c;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Paragraphs */
+.markdown-body p {
+  margin-bottom: 1rem;
+}
+
+/* Code Blocks */
+.markdown-body pre {
+  background-color: #2d2d2d;
+  color: #f8f8f2;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+.markdown-body code {
+  background-color: #f3f4f6;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: "Courier New", Courier, monospace;
+  color: #e63946;
+}
+
+/* Lists */
+.markdown-body ul {
+  padding-left: 1.5rem;
+}
+
+.markdown-body ol {
+  padding-left: 1.5rem;
+}
+
+/* Links */
+.markdown-body a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.markdown-body a:hover {
+  text-decoration: underline;
+}
+
+/* Tables */
+.markdown-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.markdown-body th,
+.markdown-body td {
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+}
+
+.markdown-body th {
+  background-color: #f3f4f6;
+  font-weight: bold;
+}
