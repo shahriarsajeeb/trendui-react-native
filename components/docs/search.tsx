@@ -10,7 +10,7 @@ export function Search() {
       <Input
         type="search"
         placeholder="Search..."
-        className="pl-9 bg-background border-0 ring-1 ring-border focus-visible:ring-2"
+        className="pl-9 mb-2 bg-background border-0 ring-1 ring-border focus-visible:ring-2"
       />
     </div>
   )

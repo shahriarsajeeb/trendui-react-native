@@ -1,6 +1,6 @@
 export const codeExamples = {
-    basics: `// Basic VintLang Operations
-    let name = "VintLang"
+    basics: `// Basic trendui Operations
+    let name = "trendui"
     s = name.split("") 
     for i in s { 
         print(i)
@@ -11,7 +11,7 @@ export const codeExamples = {
     convert(age, "INTEGER")
     print(type(age))`,
       
-    functions: `// Function Definition in VintLang
+    functions: `// Function Definition in trendui
     let printDetails = func(name, age, height) {
         print("My name is " + name + 
               ", I am " + age + 
@@ -20,7 +20,7 @@ export const codeExamples = {
     }
     
     // Function call
-    printDetails("VintLang", "10", "6.0")`,
+    printDetails("trendui", "10", "6.0")`,
       
     timeAndNet: `// Time and Network Operations
     import time
@@ -34,7 +34,7 @@ export const codeExamples = {
     let res = net.get("https://example.com")
     print(res)`,
   
-    jsonModule: `// JSON Module Examples in VintLang
+    jsonModule: `// JSON Module Examples in trendui
     import json
     
     // Example 1: Decode a JSON string

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-// import { Search } from "@/components/docs/search";
+import { Search } from "@/components/docs/search";
 import {
   Hand,
   FileText,
@@ -30,8 +30,8 @@ const navigation = [
     icon: FileText,
   },
   {
-    name: "Tutorial",
-    href: "#tutorial",
+    name: "Components",
+    href: "#components",
     icon: BookOpen,
   },
   {
@@ -48,11 +48,11 @@ export function Sidebar() {
     <div className="flex h-full flex-col p-6 sm:p-10 lg:p-14">
       <div className="mb-6">
         <Link href="/" className="flex items-center space-x-2">
-          <span className="text-4xl sm:text-6xl lg:text-9xl text-neutral-300 font-bold">Vint</span>
+          <span className="text-2xl sm:text-4xl lg:text-6xl text-neutral-300 font-bold">TRENDUI</span>
         </Link>
-        <p className="mt-1 text-sm text-muted-foreground">Modern Programming made simple</p>
       </div>
       <nav className="mt-4 flex-1">
+        <Search/>
         {navigation.map((item) => {
           const isActive = pathname === item.href;
           return (
@@ -73,12 +73,7 @@ export function Sidebar() {
           );
         })}
       </nav>
-      <div className="mt-auto space-y-2 text-xs text-muted-foreground">
-        <p>Language by Tachera Sasi</p>
-        <p>
-          From <Link href="https://ekilie.com">ekilie</Link>
-        </p>
-      </div>
+      
     </div>
   );
 }

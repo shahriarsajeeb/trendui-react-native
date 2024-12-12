@@ -55,7 +55,7 @@ export const features = [
   },
   {
     name: 'Global Community',
-    description: 'Join a growing community of developers building with VintLang.',
+    description: 'Join a growing community of developers building with trendui.',
     icon: Globe,
   },
 ]

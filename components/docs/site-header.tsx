@@ -17,7 +17,7 @@ export function SiteHeader() {
           <div className="w-full flex-1 md:w-auto md:flex-none">
             <Link href="/" className="mr-6 flex items-center space-x-2">
               <Code2 className="h-6 w-6" />
-              <span className="hidden font-bold sm:inline-block">VintLang</span>
+              <span className="hidden font-bold sm:inline-block">trendui</span>
             </Link>
           </div>
           <nav className="flex items-center">

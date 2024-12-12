@@ -5,15 +5,15 @@ export function Introduction() {
     <div className="space-y-4 mt-10 max-w-prose" id="">
       <SectionHeader title="Introduction" />
       <p className="text-xs md:text-xl text-muted-foreground">
-        VintLang is a lightweight, expressive programming language designed to
-        simplify modern development. With its clean syntax and powerful core
-        features, VintLang empowers developers to build anything from quick
-        scripts to robust enterprise-grade systems effortlessly.
+        TrendUI is a modern, lightweight UI library for React Native that
+        supports both Tailwind CSS and traditional Stylesheets, offering
+        developers flexibility and scalability when building mobile
+        applications.
       </p>
       <p className="text-xs md:text-xl text-muted-foreground">
-        Whether you&apos;re automating tasks, developing APIs, or crafting
-        interactive applications, VintLang&apos;s modular and atomic principles
-        ensure scalability and maintainability for projects of any size.
+        Whether you're creating simple UIs or complex enterprise-grade mobile
+        apps, TrendUI's clean syntax and powerful core components ensure a
+        smooth development experience with responsive, beautiful designs.
       </p>
     </div>
   );
