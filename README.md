@@ -27,3 +27,11 @@ Or using yarn:
 ```bash
 yarn add @trendui/react-native --save
 ```
+
+### Cli locally
+
+```bash
+    npm link
+```
+
+then you can use trendui init ,trendui add or trendui list.
