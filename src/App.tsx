@@ -1,5 +1,6 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { FlatList, StyleSheet, View } from "react-native";
+import { Button, Image, Text } from "./components";
 
 /**
  * Welcome page for the TrendUI library.
@@ -10,15 +11,17 @@ import { StyleSheet, Text, View } from "react-native";
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Welcome to TrendUI</Text>
-      <Text style={styles.subtitle}>
-        A modern UI component library for React Native / Expo, built with
-        flexibility, accessibility, and design in mind.
-      </Text>
-      <Text style={styles.description}>
-        Get started by exploring our components: Button, Select, TextInput, and
-        more. Build stunning mobile apps effortlessly.
-      </Text>
+      <Text style={styles.title} value="Welcome to TrendUI" />
+      <Text
+        variant="paragraph"
+        className="text-center leading-2 mb-4"
+        value="A modern UI component library for React Native / Expo, built with flexibility, accessibility, and design in mind."
+      />
+
+      <Text
+        value="Get started by exploring our components: Button, Select, TextInput, and
+        more. Build stunning mobile apps effortlessly."
+      />
     </View>
   );
 }

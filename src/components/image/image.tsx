@@ -7,6 +7,7 @@ import {
   StyleProp,
   ImageStyle,
 } from "react-native";
+import tw from "twrnc";
 
 /**
  * Props definition for the Image component.
@@ -35,7 +36,6 @@ const Image: React.FC<ImageProps> = ({
   alt,
   width,
   height,
-  blurRadius = 10,
   style,
   className,
 }) => {
@@ -50,9 +50,6 @@ const Image: React.FC<ImageProps> = ({
     }).start();
   };
 
-  // Convert className to a style object if using a utility like 'tailwindcss-react-native'
-  const computedStyle = className ? convertClassNameToStyle(className) : {};
-
   return (
     <View
       style={{ width, height, alignItems: "center", justifyContent: "center" }}
@@ -60,22 +57,12 @@ const Image: React.FC<ImageProps> = ({
       <Animated.Image
         source={{ uri: src }}
         style={[
-          { width, height, position: "absolute", borderRadius: blurRadius },
-          style,
-          computedStyle,
-          { opacity },
-        ]}
-        blurRadius={blurRadius}
-        onLoad={onLoad}
-        onError={() => setError(true)}
-      />
-      <Animated.Image
-        source={{ uri: src }}
-        style={[
-          { width, height, position: "absolute", borderRadius: blurRadius },
-          style,
-          computedStyle,
-          { opacity },
+          {
+            width,
+            height,
+            ...(style as object),
+          },
+          tw`${className || ""}`,
         ]}
         onLoad={onLoad}
         onError={() => {
@@ -89,12 +76,6 @@ const Image: React.FC<ImageProps> = ({
     </View>
   );
 };
-
-// Placeholder function if you're converting class names to styles
-function convertClassNameToStyle(className: string): object {
-  // Implement conversion logic here based on your setup
-  return {};
-}
 
 const styles = StyleSheet.create({
   errorText: {

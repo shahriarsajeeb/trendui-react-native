@@ -5,7 +5,7 @@ import {
   StyleSheet,
 } from "react-native";
 import tw from "twrnc"; // Import twrnc for TailwindCSS
-import { responsiveFontSize } from "@trendui/react-native/src/utils/responsive.font.sizes";
+import { responsiveFontSize } from "../../utils/responsive.font.sizes";
 
 /**
  * @typedef TextProps
