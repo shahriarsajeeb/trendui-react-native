@@ -8,7 +8,7 @@ export function cn(...inputs: ClassValue[]) {
 
 export async function getMarkdownContent(file:string) {
   const res = await fetch(
-    `https://raw.githubusercontent.com/ekilie/vint-lang/main/${file}`
+    `https://raw.githubusercontent.com/trend-ui/trendui-react-native/master/${file}`
   );
   if (!res.ok) {
     throw new Error(`Failed to fetch Markdown: ${res.statusText}`);
