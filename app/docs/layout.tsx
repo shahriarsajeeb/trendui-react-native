@@ -1,3 +1,4 @@
+import { ModeToggle } from "@/components/docs/mode-toggle";
 import { Sidebar } from "@/components/docs/sidebar";
 import { SiteHeader } from "@/components/docs/site-header";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -27,6 +28,9 @@ export default function DocsLayout({ children }: DocsLayoutProps) {
       {/* Right Sidebar */}
       <aside className="hidden lg:block md:block fixed right-0 top-0 z-30 w-full sm:w-[25%] md:w-[20%] lg:w-[250px] h-full border-l bg-background">
         <div className="sticky top-0 p-4 space-y-4">
+          <div className="w-full p-4 sm:p-5 lg:p-6 justify-start shadow-lg rounded-lg border-2 dark:border-none dark:bg-neutral-900 dark:hover:bg-neutral-800">
+            <ModeToggle />
+          </div>
           <h2 className="text-lg font-semibold text-muted-foreground">
             TrendUI Links
           </h2>
