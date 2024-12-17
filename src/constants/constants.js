@@ -6,50 +6,57 @@ const AVAILABLE_COMPONENTS = {
     name: "Button",
     description: "A customizable button component",
     dependencies: [],
-    directory: "buttons",
+  },
+  image: {
+    name: "Image",
+    description: "An Image component with by default animation loader!",
+    dependencies: [],
   },
   text: {
     name: "Text",
     description: "A text component with various styles",
     dependencies: [],
-    directory: "typography",
   },
-  input: {
-    name: "Input",
+  textinput: {
+    name: "TextInput",
     description: "Text input component",
     dependencies: [],
-    directory: "forms",
   },
-  card: {
-    name: "Card",
-    description: "Container component with shadow and border radius",
+  select: {
+    name: "Select",
+    description: "Select options component",
     dependencies: [],
-    directory: "layout",
   },
-  avatar: {
-    name: "Avatar",
-    description: "Circular image component for user avatars",
-    dependencies: [],
-    directory: "data-display",
-  },
-  checkbox: {
-    name: "Checkbox",
-    description: "Selectable checkbox component",
-    dependencies: [],
-    directory: "forms",
-  },
-  switch: {
-    name: "Switch",
-    description: "Toggle switch component",
-    dependencies: [],
-    directory: "forms",
-  },
-  spinner: {
-    name: "Spinner",
-    description: "Loading spinner animation",
-    dependencies: [],
-    directory: "feedback",
-  },
+  // card: {
+  //   name: "Card",
+  //   description: "Container component with shadow and border radius",
+  //   dependencies: [],
+  //   directory: "layout",
+  // },
+  // avatar: {
+  //   name: "Avatar",
+  //   description: "Circular image component for user avatars",
+  //   dependencies: [],
+  //   directory: "data-display",
+  // },
+  // checkbox: {
+  //   name: "Checkbox",
+  //   description: "Selectable checkbox component",
+  //   dependencies: [],
+  //   directory: "forms",
+  // },
+  // switch: {
+  //   name: "Switch",
+  //   description: "Toggle switch component",
+  //   dependencies: [],
+  //   directory: "forms",
+  // },
+  // spinner: {
+  //   name: "Spinner",
+  //   description: "Loading spinner animation",
+  //   dependencies: [],
+  //   directory: "feedback",
+  // },
 };
 
 // Default configuration

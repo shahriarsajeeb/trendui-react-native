@@ -17,7 +17,7 @@ import { responsiveFontSize } from "../../utils/responsive.font.sizes";
  * @property {'light' | 'dark'} theme - Optional. Theme mode, defaults to 'light'.
  * @property {"normal" | "bold" | "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900"} fontWeight - Optional. Font weight for the text.
  */
-interface TextProps extends RNTextProps {
+export interface TextProps extends RNTextProps {
   value: string;
   size?: "lg" | "xl" | "2xl" | "3xl" | number;
   className?: string;
@@ -53,13 +53,11 @@ const Text: React.FC<TextProps> = ({
   fontWeight,
   ...props
 }) => {
-  // Define default colors based on theme prop to handle light and dark modes.
   const themeColors = {
     textPrimary: theme === "dark" ? "#FFF" : "#000",
     textSecondary: theme === "dark" ? "#AAA" : "#666",
   };
 
-  // Define styles for different variants using the theme colors.
   const variants = {
     label: {
       fontSize: responsiveFontSize(14),
@@ -85,16 +83,14 @@ const Text: React.FC<TextProps> = ({
     },
   };
 
-  // Apply variant styles if a variant is specified.
   const variantStyles = variant ? variants[variant] : {};
 
-  // Combine styles: Tailwind, variant, size, fontWeight, and custom styles
   const combinedStyles = StyleSheet.flatten([
-    variantStyles, // Static variant styles
-    getSizeStyles(size), // Dynamic size styles
-    className ? tw`${className}` : {}, // Tailwind styles from className
-    fontWeight ? { fontWeight } : {}, // Custom fontWeight to override variant
-    style, // Custom styles passed by the user
+    variantStyles,
+    getSizeStyles(size),
+    className ? tw`${className}` : {},
+    fontWeight ? { fontWeight } : {},
+    style,
   ]);
 
   return (
@@ -111,7 +107,7 @@ const Text: React.FC<TextProps> = ({
  */
 function getSizeStyles(size?: "lg" | "xl" | "2xl" | "3xl" | number) {
   if (size === undefined) {
-    return {}; // Return an empty object if size is undefined
+    return {};
   }
 
   if (typeof size === "number") {
@@ -121,7 +117,6 @@ function getSizeStyles(size?: "lg" | "xl" | "2xl" | "3xl" | number) {
   }
 }
 
-// Mapping of size keys to numerical values for fontSize.
 const sizeMap = {
   lg: 18,
   xl: 20,

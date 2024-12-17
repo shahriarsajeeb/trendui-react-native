@@ -17,7 +17,7 @@ async function init() {
         type: "input",
         name: "componentPath",
         message: "Where would you like to store your components?",
-        default: "src/components",
+        default: "trendui",
       },
     ]);
 
