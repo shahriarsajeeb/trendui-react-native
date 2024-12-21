@@ -3,7 +3,11 @@ import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-export function AnimatedCircularProgressBar() {
+export function AnimatedCircularProgressBar({
+  className,
+}: {
+  className?: string;
+}) {
   const max = 100;
   const min = 0;
   const gaugePrimaryColor = "rgb(79 70 229)";
@@ -36,14 +40,14 @@ export function AnimatedCircularProgressBar() {
         y: [0, -10, 0], // Bounce up and down
       }}
       transition={{
-        delay: 0.4,
+        delay: 0.6,
         y: {
-          duration: 5,
-          repeat: Infinity, // Infinite bouncing
-          ease: "easeInOut", // Smooth back and forth
+          duration: 6,
+          repeat: Infinity, 
+          ease: "easeInOut", 
         },
       }}
-      className={cn("relative size-40 text-2xl font-semibold")}
+      className={cn(" size-40 text-2xl font-semibold", className)}
       style={
         {
           "--circle-size": "100px",

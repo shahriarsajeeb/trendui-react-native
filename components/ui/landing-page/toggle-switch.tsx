@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-export default function TooggleSwitch() {
+export default function TooggleSwitch({ className }: { className?: string }) {
   const [isChecked, setIsChecked] = useState(true);
 
   const handleCheckboxChange = () => {
@@ -16,9 +16,9 @@ export default function TooggleSwitch() {
         y: [0, -10, 0], // Bounce up and down
       }}
       transition={{
-        delay: 0.4,
+        delay: 0.6,
         y: {
-          duration: 5,
+          duration: 6,
           repeat: Infinity, // Infinite bouncing
           ease: "easeInOut", // Smooth back and forth
         },

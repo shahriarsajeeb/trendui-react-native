@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Heart, House, Search, Settings } from "lucide-react";
 import { useState } from "react";
 
-const Liquid = () => {
+const Liquid = ({ className }: { className: string }) => {
   const links = [
     { label: "home", icon: <House /> },
     { label: "search", icon: <Search /> },
@@ -22,14 +22,14 @@ const Liquid = () => {
         y: [0, -10, 0], // Bounce up and down
       }}
       transition={{
-        delay: 0.4,
+        delay: 0.3,
         y: {
-          duration: 5,
+          duration: 4,
           repeat: Infinity, // Infinite bouncing
           ease: "easeInOut", // Smooth back and forth
         },
       }}
-      className=" w-[150px] h-full center absolute top-[380px] left-[80px] "
+      className={cn(" w-[150px] h-full center ", className)}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

@@ -1,6 +1,7 @@
+import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 
-export default function LoadingButton() {
+export default function LoadingButton({ className }: { className?: string }) {
   return (
     <motion.button
       disabled
@@ -12,14 +13,17 @@ export default function LoadingButton() {
         y: [0, -10, 0], // Bounce up and down
       }}
       transition={{
-        delay: 0.4,
+        delay: 0.6,
         y: {
-          duration: 5,
+          duration: 4,
           repeat: Infinity, // Infinite bouncing
           ease: "easeInOut", // Smooth back and forth
         },
       }}
-      className="text-white bg-blue-700 rounded-full hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-5 py-2.5 text-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 inline-flex items-center"
+      className={cn(
+        "text-white bg-blue-700 rounded-full hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-5 py-2.5 text-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 inline-flex items-center",
+        className
+      )}
     >
       <svg
         aria-hidden="true"

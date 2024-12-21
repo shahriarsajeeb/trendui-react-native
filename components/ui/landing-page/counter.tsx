@@ -28,7 +28,7 @@ const animation: Variants = {
   }),
 };
 
-const Counter = () => {
+const Counter = ({ className }: { className: string }) => {
   const [num, setNum] = useState(0);
   const [direction, setDirection] = useState(1);
 
@@ -59,19 +59,19 @@ const Counter = () => {
         y: [0, -10, 0], // Bounce up and down
       }}
       transition={{
-        delay: 0.4,
+        delay: 0.6,
         y: {
-          duration: 5,
+          duration: 3,
           repeat: Infinity, // Infinite bouncing
           ease: "easeInOut", // Smooth back and forth
         },
       }}
-      className="flex flex-col w-[200px] items-center justify-center gap-3 bg-gradient-to-r from-purple-500/80 to-blue-500/80 rounded-full absolute top-[200px] left-[20%]"
+      className={cn(
+        "flex flex-col w-[150px]  h-[40px] items-center justify-center gap-3 bg-gradient-to-r from-purple-500/80 to-blue-500/80 rounded-full ",
+        className
+      )}
     >
-      <div
-        ref={scope}
-        className="flex items-center justify-center gap-3 text-3xl"
-      >
+      <div ref={scope} className="flex items-center justify-center text-2xl">
         <button
           onClick={() => counter("decrease")}
           className={cn(

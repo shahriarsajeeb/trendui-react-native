@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-export default function NotificationBell() {
+export default function NotificationBell({className}: {className?: string}) {
   return (
     <motion.div
       initial={{ opacity: 0, x: 20, y: 0 }}

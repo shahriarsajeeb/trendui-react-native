@@ -2,35 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
-html{
+html {
   scroll-behavior: smooth;
 }
-
 
 .loader {
   width: fit-content;
   font-weight: bold;
   font-family: monospace;
   font-size: 30px;
-  color :#0000;
+  color: #0000;
   overflow: hidden;
-  animation: l9 5s infinite cubic-bezier(0.3,1,0,1);
+  animation: l9 5s infinite cubic-bezier(0.3, 1, 0, 1);
 }
 .loader:before {
-  content:"Loading..."
+  content: "Loading...";
+}
+
+.landing-background {
+  background-image: url("/mesh.svg");
+  background-position-x: right;
 }
 @keyframes l9 {
-  0%  {text-shadow: 0    0 #000, 11ch 0 #8A9B0F, 22ch 0 #C02942, 33ch 0 #00A0B0,44ch 0 #000}
-  25% {text-shadow:-11ch 0 #000,  0ch 0 #8A9B0F, 11ch 0 #C02942, 22ch 0 #00A0B0,33ch 0 #000}
-  50% {text-shadow:-22ch 0 #000,-11ch 0 #8A9B0F,  0ch 0 #C02942, 11ch 0 #00A0B0,22ch 0 #000}
-  75% {text-shadow:-33ch 0 #000,-22ch 0 #8A9B0F,-11ch 0 #C02942,  0ch 0 #00A0B0,11ch 0 #000}
-  100%{text-shadow:-44ch 0 #000,-33ch 0 #8A9B0F,-22ch 0 #C02942,-11ch 0 #00A0B0, 0ch 0 #000}
+  0% {
+    text-shadow: 0 0 #000, 11ch 0 #8a9b0f, 22ch 0 #c02942, 33ch 0 #00a0b0,
+      44ch 0 #000;
+  }
+  25% {
+    text-shadow: -11ch 0 #000, 0ch 0 #8a9b0f, 11ch 0 #c02942, 22ch 0 #00a0b0,
+      33ch 0 #000;
+  }
+  50% {
+    text-shadow: -22ch 0 #000, -11ch 0 #8a9b0f, 0ch 0 #c02942, 11ch 0 #00a0b0,
+      22ch 0 #000;
+  }
+  75% {
+    text-shadow: -33ch 0 #000, -22ch 0 #8a9b0f, -11ch 0 #c02942, 0ch 0 #00a0b0,
+      11ch 0 #000;
+  }
+  100% {
+    text-shadow: -44ch 0 #000, -33ch 0 #8a9b0f, -22ch 0 #c02942, -11ch 0 #00a0b0,
+      0ch 0 #000;
+  }
 }
 
 @layer base {
   :root {
-    --background: 0 
-0% 100%;
+    --background: 0 0% 100%;
     --foreground: 20 14.3% 4.1%;
     --card: 0 0% 100%;
     --card-foreground: 20 14.3% 4.1%;
@@ -94,4 +112,3 @@ html{
     @apply bg-background text-foreground;
   }
 }
-

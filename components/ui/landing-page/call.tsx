@@ -40,7 +40,7 @@ const springTransition = {
   damping: 20,
 };
 
-const Call = () => {
+export default function Call({ className }: { className: string }) {
   const [status, setStatus] = useState<Status>("idle");
   const [elapsedTime, setElapsedTime] = useState<number>(0);
   const [callUsers, setCallUsers] = useState(initialCallUsers); // Manage user state
@@ -109,7 +109,10 @@ const Call = () => {
   return (
     <div className="rounded-lg  center">
       <motion.div
-        className="flex gap-4 flex-col cursor-pointer bg-gray-900 shadow-md text-primary-foreground p-4 tracking-tight overflow-hidden absolute top-[350px] -right-14"
+        className={cn(
+          "flex gap-4 flex-col cursor-pointer bg-gray-900 shadow-md text-primary-foreground p-4 tracking-tight overflow-hidden ",
+          className
+        )}
         aria-expanded={isOpen}
         layout
         role="button"
@@ -122,9 +125,9 @@ const Call = () => {
           y: [0, -10, 0], // Bounce up and down
         }}
         transition={{
-          delay: 0.4,
+          delay: 0.3,
           y: {
-            duration: 5,
+            duration: 3,
             repeat: Infinity, // Infinite bouncing
             ease: "easeInOut", // Smooth back and forth
           },
@@ -204,6 +207,4 @@ const Call = () => {
       </motion.div>
     </div>
   );
-};
-
-export default Call;
+}

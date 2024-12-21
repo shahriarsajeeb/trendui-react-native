@@ -1,5 +1,6 @@
+import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-export default function Pagination() {
+export default function Pagination({ className }: { className: string }) {
   return (
     <motion.div
       initial={{ opacity: 0, x: 20, y: 0 }}
@@ -9,14 +10,17 @@ export default function Pagination() {
         y: [0, -10, 0], // Bounce up and down
       }}
       transition={{
-        delay: 0.4,
+        delay: 0.5,
         y: {
-          duration: 5,
+          duration: 4,
           repeat: Infinity, // Infinite bouncing
           ease: "easeInOut", // Smooth back and forth
         },
       }}
-      className="flex gap-1 bg-zinc-900 p-2 rounded-full w-1/4 absolute -right-12 top-[220px]"
+      className={cn(
+        "flex justify-end gap-1 bg-zinc-900 p-2 rounded-full  ",
+        className
+      )}
     >
       <button className="px-2 py-1 text-zinc-400 hover:text-white text-sm">
         1

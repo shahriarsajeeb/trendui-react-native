@@ -16,7 +16,7 @@ interface AvatarCirclesProps {
   avatarUrls: Avatar[];
 }
 
-const AvatarCircles = () => {
+const AvatarCircles = ({ className }: { className: string }) => {
   const numPeople = 6;
   const avatarUrls = [
     {
@@ -55,14 +55,12 @@ const AvatarCircles = () => {
       transition={{
         delay: 0.4,
         y: {
-          duration: 5,
+          duration: 3,
           repeat: Infinity, // Infinite bouncing
           ease: "easeInOut", // Smooth back and forth
         },
       }}
-      className={cn(
-        "z-10 flex -space-x-4 rtl:space-x-reverse absolute right-10 top-[150px]"
-      )}
+      className={cn("z-10 flex -space-x-4 rtl:space-x-reverse ", className)}
     >
       {avatarUrls.map((url, index) => (
         <a

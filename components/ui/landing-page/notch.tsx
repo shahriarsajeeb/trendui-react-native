@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 
-const Notch = () => {
+const Notch = ({ className }: { className: string }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [showContent, setShowContent] = useState(false);
 
@@ -72,21 +72,21 @@ const Notch = () => {
         y: [0, -10, 0], // Bounce up and down
       }}
       transition={{
-        delay: 0.4,
+        delay: 0.2,
         y: {
-          duration: 5,
+          duration: 6,
           repeat: Infinity, // Infinite bouncing
           ease: "easeInOut", // Smooth back and forth
         },
       }}
-      className="h-full center w-full absolute top-[280px] left-[50px]"
+      className={cn("h-full center w-full ", className)}
     >
       <motion.div
         whileHover={{
           scale: isOpen ? 1 : 0.95,
         }}
         className={cn(
-          "bg-primary w-[500px] rounded-full h-16 px-4 cursor-pointer",
+          "bg-primary w-[500px] rounded-full h-16 px-4 cursor-pointer bg-zinc-800",
           isOpen && "rounded-3xl"
         )}
         animate={{ height: isOpen ? 240 : 64, width: isOpen ? 500 : 300 }}
@@ -95,11 +95,11 @@ const Notch = () => {
       >
         <div
           className={cn(
-            "flex items-center justify-between relative h-16",
+            "flex items-center justify-between relative h-16 ",
             isOpen && "pt-5"
           )}
         >
-          <p className="text-xl text-primary-foreground">2(bkm)</p>
+          <p className="text-xl text-white">2(bkm)</p>
           <motion.div
             className="rounded-3xl overflow-hidden relative"
             animate={{
@@ -120,8 +120,8 @@ const Notch = () => {
             />
             <div
               className={cn(
-                "absolute opacity-0 bg-black/50 top-0 left-0 flex items-center justify-center text-primary-foreground font-semibold text-2xl h-full w-full transition-all duration-150",
-                isOpen && "hover:opacity-100"
+                "absolute opacity-0 bg-black/50 top-0 left-0 flex items-center justify-center text-white font-semibold text-2xl h-full w-full transition-all duration-150",
+                isOpen && "hover:opacity-100 "
               )}
             >
               Book a call
@@ -136,7 +136,7 @@ const Notch = () => {
               exit="exit"
               variants={presence}
               transition={{ duration: 0.2 }}
-              className="text-primary-foreground mt-6"
+              className="text-white mt-6"
             >
               {["Home", "About", "Contact"].map((item, index) => (
                 <motion.li key={item + index} variants={itemVariants}>

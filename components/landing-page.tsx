@@ -1,22 +1,24 @@
 "use client";
 import { motion } from "framer-motion";
+import { Copy, Github, Search } from "lucide-react";
 import { useState } from "react";
-import { Copy, Github, Moon, Search, Sun } from "lucide-react";
-import Liquid from "./ui/landing-page/liquid-buttons";
-import Counter from "./ui/landing-page/counter";
-import Notch from "./ui/landing-page/notch";
-import { CardDemo } from "./ui/landing-page/card";
-import { AnimatedCircularProgressBar } from "./ui/landing-page/progress";
 import AvatarCircles from "./ui/landing-page/avatars";
 import Call from "./ui/landing-page/call";
-import NotificationCard from "./ui/landing-page/notification-card";
-import InputNext from "./ui/landing-page/input-next";
+import Counter from "./ui/landing-page/counter";
+import Features from "./ui/landing-page/feature-section";
+import Footer from "./ui/landing-page/footer";
+import Liquid from "./ui/landing-page/liquid-buttons";
+import LoadingButton from "./ui/landing-page/loading-button";
+import Notch from "./ui/landing-page/notch";
+import NotificationBell from "./ui/landing-page/notification-bell";
 import Pagination from "./ui/landing-page/pagination";
 import ProductCard from "./ui/landing-page/product-card";
+import { AnimatedCircularProgressBar } from "./ui/landing-page/progress";
 import TooggleSwitch from "./ui/landing-page/toggle-switch";
-import NotificationBell from "./ui/landing-page/notification-bell";
-import LoadingButton from "./ui/landing-page/loading-button";
 import Image from "next/image";
+import Mesh from "../public/mesh.svg";
+import Background from "./ui/landing-page/background";
+
 export function LandingPage() {
   const [isChecked, setIsChecked] = useState(true);
 
@@ -24,7 +26,7 @@ export function LandingPage() {
     setIsChecked(!isChecked);
   };
   return (
-    <div className="min-h-screen bg-black text-white relative overflow-hidden">
+    <div className="landing-background min-h-screen  bg-black text-white relative overflow-hidden">
       {/* Navigation */}
       <header className="container mx-auto px-4 pt-4">
         <nav className="h-16 flex items-center justify-between">
@@ -105,8 +107,9 @@ export function LandingPage() {
       </header>
 
       {/* Hero Section */}
-      <main className="container mx-auto px-4 pt-24 flex flex-col justify-center h-[70vh]">
-        <div className="max-w-3xl z-10">
+      <main className="container  mx-auto px-4 pt-24 flex justify-between h-[70vh]">
+        {/* intro */}
+        <div className="flex-1 flex flex-col justify-center">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -138,39 +141,32 @@ export function LandingPage() {
         </div>
 
         {/* Floating UI Elements */}
-        <div className="absolute top-32 right-20 space-y-4 w-[800px]">
-          <div className="flex gap-20 items-center absolute left-[30%] ">
-            <AnimatedCircularProgressBar />
-            <div className="flex gap-4 ">
-              <LoadingButton />
-
-              <NotificationBell />
-
-              <TooggleSwitch />
-            </div>
+        <div className="relative flex-1">
+          <AnimatedCircularProgressBar className="absolute top-0 left-32" />
+          <div className="flex justify-end gap-4 right-[0]">
+            <LoadingButton className="" />
+            <NotificationBell className="" />
+            <TooggleSwitch className="" />
           </div>
 
-          <Call />
-          <ProductCard />
-
-          <AvatarCircles />
-
-          <Pagination />
-
-          {/* <InputNext /> */}
-
-          {/* <NotificationCard /> */}
-
-          <Liquid />
-
-          <Counter />
-          <Notch />
-          {/* <CardDemo /> */}
+          <Call className="absolute top-[350px] right-0" />
+          <ProductCard className="absolute top-[130px] left-[50%]" />
+          <AvatarCircles className="absolute right-0 top-[130px]" />
+          <Pagination className="absolute right-[-60px] top-[200px]" />
+          <Counter className="absolute top-[265px] right-6" />
+          <Liquid className="absolute top-[220px] left-0" />
+          <Notch className="absolute top-[350px] left-[-50px]" />
         </div>
-
-        {/* Background Gradient */}
-        <div className="absolute bottom-0 left-0 right-0 h-[30vh] bg-gradient-to-t from-purple-500/20 to-transparent"></div>
       </main>
+
+      {/* featuer section */}
+      <Features />
+
+      {/* footer */}
+      <Footer />
+
+      {/* Background Gradient */}
+      <div className="absolute  bottom-0 left-0 right-0 h-[30vh] bg-gradient-to-t from-purple-500/20 to-transparent"></div>
     </div>
   );
 }
