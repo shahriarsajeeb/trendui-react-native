@@ -1,6 +1,6 @@
 {
   "name": "@trendui/react-native",
-  "version": "1.7.4",
+  "version": "1.7.5",
   "main": "index.ts",
   "description": "A modern UI component library for React Native",
   "license": "MIT",
@@ -25,7 +25,11 @@
     "metro.config.js"
   ],
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "url": "https://github.com/trend-ui/trendui-react-native"
   },
   "dependencies": {
     "tailwindcss": "3.4.16",
@@ -44,6 +48,5 @@
   "devDependencies": {
     "typescript": "^5.3.3",
     "@types/react": "~18.3.12"
-  },
-  "homepage": "https://github.com/trend-ui/trendui-react-native"
+  }
 }
