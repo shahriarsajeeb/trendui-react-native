@@ -1,127 +1,125 @@
 # Button Component
 
-The `Button` component is a customizable and versatile UI element designed for React Native applications. It integrates TailwindCSS for styling and offers advanced features like loading states, theming, and animation toggling.
+The `Button` component is a versatile and customizable button element designed for React Native applications. It supports multiple styles, loading states, and TailwindCSS integration, providing an intuitive and developer-friendly solution for creating interactive buttons.
 
 ---
 
-## Features
+## 📦 Installation
+```bash
+npx trendui add button
+```
+---
+
+## ✨ Features
 
 - **Variants**: Predefined styles for primary, secondary, danger, and success buttons.
-- **Loading State**: Displays a loading spinner when `loading` is set to `true`.
-- **TailwindCSS Integration**: Easily style the button using `className`.
-- **Custom Styling**: Additional custom styles can be applied using `style` and `textStyle`.
-- **Animation Control**: Enable or disable button press animations with the `animation` prop.
-- **Accessibility**: Fully accessible button for enhanced usability.
+- **Loading State**: Built-in support for showing a loading spinner while disabling the button.
+- **Custom Animations**: Optional touch animations for a smoother user experience.
+- **TailwindCSS Support**: Use `className` for additional styling with TailwindCSS.
+- **Customizable Styles**: Pass custom styles for the button and text.
+- **Disabled State**: Automatically adjusts the button appearance when disabled.
 
 ---
 
-## Props
+## 🔧 Props
 
-| Prop Name   | Type                   | Default     | Description                                                            |
-| ----------- | ---------------------- | ----------- | ---------------------------------------------------------------------- | ---------- | ----------- | -------------------------------- |
-| `value`     | `string`               | Required    | The text to display on the button.                                     |
-| `onPress`   | `() => void`           | Required    | The callback function to execute when the button is pressed.           |
-| `variant`   | `"primary"             | "secondary" | "danger"                                                               | "success"` | `"primary"` | The style variant of the button. |
-| `loading`   | `boolean`              | `false`     | If `true`, displays a loading spinner and disables the button.         |
-| `disabled`  | `boolean`              | `false`     | If `true`, disables the button.                                        |
-| `animation` | `boolean`              | `true`      | If `true`, enables the default press animation; disables it otherwise. |
-| `className` | `string`               | `""`        | TailwindCSS classes for styling the button.                            |
-| `style`     | `StyleProp<ViewStyle>` | `undefined` | Additional styles for the button container.                            |
-| `textStyle` | `StyleProp<TextStyle>` | `undefined` | Additional styles for the button text.                                 |
+| Prop        | Type                                                      | Default    | Description                                                                 |
+|-------------|-----------------------------------------------------------|------------|-----------------------------------------------------------------------------|
+| `value`     | `string`                                                  | -          | The text to display on the button.                                         |
+| `onPress`   | `() => void`                                              | -          | Function to execute when the button is pressed.                            |
+| `variant`   | `"primary"`, `"secondary"`, `"danger"`, `"success"`       | `"primary"`| Sets the predefined button style.                                          |
+| `loading`   | `boolean`                                                 | `false`    | If `true`, displays a loading spinner and disables the button.             |
+| `disabled`  | `boolean`                                                 | `false`    | If `true`, disables the button and adjusts its appearance.                 |
+| `animation` | `boolean`                                                 | `true`     | Enables or disables the touch animation.                                   |
+| `style`     | `StyleProp<ViewStyle>`                                    | -          | Custom styles for the button container.                                    |
+| `textStyle` | `StyleProp<TextStyle>`                                    | -          | Custom styles for the button text.                                         |
+| `className` | `string`                                                  | -          | TailwindCSS classes for additional styling.                                |
 
 ---
 
-## Installation
+## 🚀 Usage
 
-To use the `Button` component, ensure you have the necessary dependencies like `twrnc` for TailwindCSS integration in your project.
+### Basic Usage
 
-1. Install the required package for TailwindCSS in React Native:
-
-   ```bash
-   npm install twrnc
-   ```
-
-## Usage
-
-Here's how to use the Button component:
-
-```bash
+```tsx
 import React from "react";
-import { Button } from "./path-to-your-button";
+import { Button } from "@/trendui";
 
-const App = () => {
+export default function App() {
   return (
-    <Button
-      value="Submit"
-      variant="primary"
-      onPress={() => console.log("Button Pressed")}
-      className="mt-4 h-[13] mx-4"
-      loading={false}
-      textStyle={{ fontSize: 25 }}
-    />
+    <Button value="Click Me" onPress={() => alert("Button Pressed!")} />
   );
-};
-
-export default App;
+}
 ```
 
-## Examples
+---
 
-# Primary Button
+### Button Variants
 
-```bash
+```tsx
+<Button value="Primary" variant="primary" onPress={() => {}} />
+<Button value="Secondary" variant="secondary" onPress={() => {}} />
+<Button value="Danger" variant="danger" onPress={() => {}} />
+<Button value="Success" variant="success" onPress={() => {}} />
+```
+
+---
+
+### Loading State
+
+```tsx
+<Button value="Loading..." loading onPress={() => {}} />
+```
+
+---
+
+### Disabled State
+
+```tsx
+<Button value="Disabled" disabled onPress={() => {}} />
+```
+
+---
+
+### Custom Styling
+
+```tsx
 <Button
-  value="Submit"
-  variant="primary"
-  onPress={() => console.log("Primary Button Pressed")}
+  value="Custom Button"
+  style={{ backgroundColor: "purple", borderRadius: 10 }}
+  textStyle={{ fontSize: 18, fontWeight: "bold" }}
+  onPress={() => {}}
 />
 ```
 
-# Loading State
+---
 
-```bash
+### TailwindCSS Styling
+
+```tsx
 <Button
-  value="Loading..."
-  variant="secondary"
-  loading={true}
-  disabled={true}
+  value="Tailwind Button"
+  className="bg-blue-500 p-4 rounded-lg"
+  onPress={() => {}}
 />
 ```
 
-# Danger Button with Custom Styles
+---
 
-```bash
-<Button
-  value="Delete"
-  variant="danger"
-  onPress={() => console.log("Danger Button Pressed")}
-  className="p-4"
-  textStyle={{ fontSize: 20 }}
-/>
-```
+## 🛠 Customization
 
-# Animation Disabled
+### Adding More Variants
 
-```bash
-<Button
-  value="No Animation"
-  variant="success"
-  onPress={() => console.log("No Animation")}
-  animation={false}
-/>
-```
+You can extend the `getVariantStyles` function in the source code to define additional button styles.
 
-# Styling with TailwindCSS
+---
 
-```bash
-<Button
-  value="Custom Styled Button"
-  variant="primary"
-  className="bg-indigo-500 rounded-lg"
-  style={{ paddingVertical: 15 }}
-/>
-```
+## 💬 Support
 
-# Accessibility
+If you have any issues or suggestions, please [open an issue](https://github.com/trendui/react-native/issues) in the repository.
 
-The `Button` component is built with accessibility in mind, ensuring proper interaction and feedback for users across all devices.
+---
+
+## 🛡 License
+
+This component is part of the TrendUI library and is licensed under the **MIT License**.

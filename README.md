@@ -71,92 +71,7 @@ TrendUI comes with a variety of prebuilt components:
 | `Text`      | Styled text component with themes        |
 | `Select`    | Dropdown component for selections        |
 
----
-
-## 🛠 Usage
-
-Here’s an example of how to use the **TrendUI** components:
-
-### Button Component
-
-```tsx
-import React from "react";
-import { Button } from "@/trendui";
-
-const App = () => {
-  return (
-    <Button
-      value="Submit"
-      variant="primary"
-      onPress={() => console.log("Button Pressed")}
-      className="mt-4 h-[13] mx-4"
-      loading={false} // it will show loader spinner when it's true
-      textStyle={{ fontSize: 25 }}
-    />
-  );
-};
-
-export default App;
-```
-
-### TextInput Component
-
-```tsx
-import React, { useState } from "react";
-import { TextInput } from '@/trendui';
-
-export default function App() {
-const [name,setName] = useState("");
-const [email,setEmail] = useState("");
-const [password,setPassword] = useState("");
-const [message,setMessage] = useState("");
-
-  return (
-  <>
-    <TextInput
-      value={name}
-      placeholder="Enter name here"
-      type="text"
-      style={{marginTop:5,marginBottom:10,marginHorizontal:5Ï}} //any styling
-      className="" //any tailwindcss className
-      onChangeText={setName}
-    />
-
-    <TextInput
-      value={email}
-      placeholder="Enter email here"
-      type="email"
-      style={{marginBottom:10,marginHorizontal:5Ï}} //any styling
-      className="" //any tailwindcss className
-      onChangeText={setEmail}
-    />
-
-      <TextInput
-      value={password}
-      placeholder="Enter password here"
-      type="password"
-      style={{marginBottom:10,marginHorizontal:5Ï}} //any styling
-      className="" //any tailwindcss className
-      onChangeText={setPassword}
-      minLength={6}
-      maxLength={8}
-    />
-
-    <TextInput
-      value={message}
-      placeholder="Enter message here"
-      type="text"
-      style={{marginTop:5,marginBottom:10,marginHorizontal:5Ï}} //any styling
-      multiline={true}
-      className="" //any tailwindcss className
-      onChangeText={setName}
-    />
-    </>
-  );
-}
-```
-
----
+--- 
 
 ## 🔧 Configuration
 
@@ -164,7 +79,7 @@ Create a `trendui.config.js` file in the root of your project to configure where
 
 ```javascript
 module.exports = {
-  componentPath: "src/components", // Path where components will be added
+  componentPath: "/trendui", // Path where components will be added
 };
 ```
 
@@ -185,19 +100,22 @@ module.exports = {
 After installing components, your project structure will look like this:
 
 ```
-/src
-  /trendui
+/trendui
     /Button
       Button.tsx
+      index.tsx
+      Readme.md
     /TextInput
       TextInput.tsx
+      index.tsx
+      Readme.md
     index.tsx
 ```
 
 The `index.tsx` file will auto-export all components, allowing you to import components seamlessly:
 
 ```tsx
-import { Button, TextInput } from './components';
+import { Button, TextInput } from '@/trendui';
 ```
 
 ---

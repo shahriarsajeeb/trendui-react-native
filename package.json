@@ -1,6 +1,6 @@
 {
   "name": "@trendui/react-native",
-  "version": "1.6.0",
+  "version": "1.7.1",
   "main": "index.ts",
   "description": "A modern UI component library for React Native",
   "license": "MIT",
