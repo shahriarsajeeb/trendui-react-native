@@ -1,7 +1,0 @@
-{
-  "/page": "app/page.js",
-  "/docs/[docs]/page": "app/docs/[docs]/page.js",
-  "/docs/components/[component]/page": "app/docs/components/[component]/page.js",
-  "/docs/sponsor/[sponsor]/page": "app/docs/sponsor/[sponsor]/page.js",
-  "/docs/page": "app/docs/page.js"
-}
