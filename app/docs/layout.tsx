@@ -1,8 +1,10 @@
 import { ModeToggle } from "@/components/docs/mode-toggle";
 import { Sidebar } from "@/components/docs/sidebar";
 import { SiteHeader } from "@/components/docs/site-header";
+import Header from "@/components/header/header";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Code2, Smile } from "lucide-react";
+import Link from "next/link";
 
 interface DocsLayoutProps {
   children: React.ReactNode;
@@ -10,6 +12,8 @@ interface DocsLayoutProps {
 
 export default function DocsLayout({ children }: DocsLayoutProps) {
   return (
+    <>
+    <Header />
     <div className="flex min-h-screen max-w-screen-xl mx-auto">
       {/* Left Sidebar */}
       <aside className="hidden lg:block md:block fixed left-0 top-0 z-30 w-full sm:w-[25%] md:w-[20%] lg:w-[250px] h-full border-r bg-background">
@@ -38,33 +42,34 @@ export default function DocsLayout({ children }: DocsLayoutProps) {
           </h2>
           <ul className="space-y-2">
             <li>
-              <a href="#link1" className="text-primary hover:underline">
+              <Link href="#link1" className="text-primary hover:underline">
                 Getting Started
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#link2" className="text-primary hover:underline">
+              <Link href="#link2" className="text-primary hover:underline">
                 Components
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#link3" className="text-primary hover:underline">
+              <Link href="#link3" className="text-primary hover:underline">
                 Themes
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#link4" className="text-primary hover:underline">
+              <Link href="#link4" className="text-primary hover:underline">
                 Documentation
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#link5" className="text-primary hover:underline">
+              <Link href="#link5" className="text-primary hover:underline">
                 GitHub
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
       </aside>
     </div>
+    </>
   );
 }

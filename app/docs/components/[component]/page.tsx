@@ -1,9 +1,16 @@
-"use client";
-
+import { Markdown } from "@/components/Markdown";
+import { fetchMarkdown } from "@/lib/utils";
 import React from "react";
 
-const page = ({ params }: { params: { component: string } }) => {
-  return <div>{params.component}</div>;
+const page = async ({ params }: { params: { component: string } }) => {
+  const markdown = await fetchMarkdown(
+    `/src/components/${params.component}/README.md`
+  );
+  return (
+    <div>
+      <Markdown>{markdown}</Markdown>
+    </div>
+  );
 };
 
 export default page;

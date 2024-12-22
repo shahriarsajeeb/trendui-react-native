@@ -11,8 +11,8 @@ export function Introduction() {
         applications.
       </p>
       <p className="text-sm sm:text-base md:text-xl text-muted-foreground">
-        Whether you're creating simple UIs or complex enterprise-grade mobile
-        apps, TrendUI's clean syntax and powerful core components ensure a
+        Whether you&apos;re creating simple UIs or complex enterprise-grade mobile
+        apps, TrendUI&apos;s clean syntax and powerful core components ensure a
         smooth development experience with responsive, beautiful designs.
       </p>
     </div>
