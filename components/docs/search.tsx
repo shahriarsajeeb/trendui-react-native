@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import { SearchIcon } from 'lucide-react'
-import { Input } from "@/components/ui/input"
+import { SearchIcon } from "lucide-react";
+import { Input } from "@/components/ui/input";
 
 export function Search() {
   return (
-    <div className="relative">
+    <div className="relative mb-4">
       <SearchIcon className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
       <Input
         type="search"
@@ -13,6 +13,5 @@ export function Search() {
         className="pl-9 mb-2 bg-background border-0 ring-1 ring-border focus-visible:ring-2"
       />
     </div>
-  )
+  );
 }
-

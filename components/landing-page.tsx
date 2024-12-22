@@ -18,6 +18,7 @@ import TooggleSwitch from "./ui/landing-page/toggle-switch";
 import Image from "next/image";
 import Mesh from "../public/mesh.svg";
 import Background from "./ui/landing-page/background";
+import Link from "next/link";
 
 export function LandingPage() {
   const [isChecked, setIsChecked] = useState(true);
@@ -88,10 +89,18 @@ export function LandingPage() {
             </svg>
           </div>
           <div className="flex items-center gap-6">
-            <button className="text-zinc-400 hover:text-white">Docs</button>
-            <button className="text-zinc-400 hover:text-white">
+            <Link
+              href={"/docs/introduction"}
+              className="text-zinc-400 hover:text-white"
+            >
+              Docs
+            </Link>
+            <Link
+              href={"/docs/components/button"}
+              className="text-zinc-400 hover:text-white"
+            >
               Components
-            </button>
+            </Link>
             <button className="text-zinc-400 hover:text-white">Blog</button>
             <button className="text-zinc-400 hover:text-white">Roadmap</button>
             <div className="flex items-center gap-2 bg-zinc-900 rounded-full px-3 py-1.5">
