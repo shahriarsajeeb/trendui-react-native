@@ -3,26 +3,42 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-import { Github, Search } from "lucide-react";
+import {
+  Component,
+  FileText,
+  Github,
+  Home,
+  Menu,
+  Search,
+  X,
+} from "lucide-react";
 
 import Navbar from "./navbar";
 
 const Header = () => {
-  const [stars, setStars] = useState<number | null>(null);
+  const [stars, setStars] = useState(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    // Fetch stars count from GitHub API
     fetch("https://api.github.com/repos/trend-ui/trendui-react-native")
       .then((response) => response.json())
       .then((data) => setStars(data.stargazers_count))
       .catch((error) => console.error("Error fetching repo data:", error));
   }, []);
 
+  const handleOpenMenu = () => {
+    setMobileMenuOpen(true);
+  };
+
+  const handleCloseMenu = () => {
+    setMobileMenuOpen(false);
+  };
+
   return (
     <header className="fixed left-0 top-0 z-50 w-full bg-transparent px-4 pt-2 backdrop-blur-xl">
       <div className="mx-auto w-full md:w-[97%]">
         <nav className="flex h-16 items-center justify-between">
-          <Link href={"/"} className="relative flex items-center gap-4">
+          <Link href="/" className="relative flex items-center gap-4">
             <span className="text-2xl">TrendUI</span>
             <svg
               width="63"
@@ -45,25 +61,32 @@ const Header = () => {
                   y2="6"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stop-color="#BE6C0F" />
-                  <stop offset="1" stop-color="#E00025" />
+                  <stop stopColor="#BE6C0F" />
+                  <stop offset="1" stopColor="#E00025" />
                 </linearGradient>
               </defs>
             </svg>
           </Link>
-          <div className="flex items-center gap-6">
-            <Navbar />
+
+          <div className="flex items-stretch gap-3 md:gap-6">
+            <div className="hidden md:block">
+              <Navbar />
+            </div>
+
             <div className="flex items-center gap-2 rounded-full bg-zinc-900 px-3 py-1.5">
               <Search className="size-4 text-zinc-400" />
               <input
                 type="search"
                 placeholder="Search"
-                className="border-none bg-transparent text-zinc-400 outline-none focus:border-none focus:outline-none"
+                className="hidden border-none bg-transparent text-zinc-400 outline-none focus:border-none focus:outline-none md:block"
               />
-              <kbd className="rounded bg-zinc-800 px-1.5 text-xs">⌘K</kbd>
+              <kbd className="hidden rounded bg-zinc-800 px-1.5 text-xs md:block">
+                ⌘K
+              </kbd>
             </div>
+
             <Link
-              href={"https://github.com/trend-ui/trendui-react-native"}
+              href="https://github.com/trend-ui/trendui-react-native"
               className="flex items-center gap-1 rounded-full bg-zinc-900 px-3 py-1.5 text-zinc-400 hover:text-white"
             >
               <button>
@@ -71,8 +94,72 @@ const Header = () => {
               </button>
               <span className="text-sm">{stars}</span>
             </Link>
+
+            {!mobileMenuOpen && (
+              <button
+                onClick={handleOpenMenu}
+                className="block md:hidden"
+                aria-label="Open menu"
+              >
+                <Menu className="size-6 text-zinc-400" />
+              </button>
+            )}
           </div>
         </nav>
+      </div>
+
+      {/* Mobile menu overlay */}
+      {mobileMenuOpen && (
+        <div
+          className="fixed inset-0 z-50 bg-black/30 backdrop-blur-sm md:hidden"
+          onClick={handleCloseMenu}
+        />
+      )}
+
+      {/* Mobile menu sidebar */}
+      <div
+        className={`fixed inset-y-0 right-0 z-[60] h-screen w-screen bg-black p-6 backdrop-blur-xl transition-transform duration-300 ease-in-out md:hidden ${
+          mobileMenuOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <div className="flex flex-col space-y-2">
+          <div className="flex justify-end">
+            <button
+              onClick={handleCloseMenu}
+              className="rounded-full p-2 hover:bg-zinc-800"
+              aria-label="Close menu"
+            >
+              <X className="size-6 text-zinc-400" />
+            </button>
+          </div>
+
+          <div className="flex flex-col space-y-4">
+            <Link
+              href="/"
+              className="flex items-center gap-2 text-lg text-zinc-200 hover:text-white"
+              onClick={handleCloseMenu}
+            >
+              <Home className="size-5" />
+              Home
+            </Link>
+            <Link
+              href="/docs"
+              className="flex items-center gap-2 text-lg text-zinc-200 hover:text-white"
+              onClick={handleCloseMenu}
+            >
+              <FileText className="size-5" />
+              Documentation
+            </Link>
+            <Link
+              href="/components"
+              className="flex items-center gap-2 text-lg text-zinc-200 hover:text-white"
+              onClick={handleCloseMenu}
+            >
+              <Component className="size-5" />
+              Components
+            </Link>
+          </div>
+        </div>
       </div>
     </header>
   );

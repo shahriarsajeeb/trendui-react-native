@@ -59,8 +59,8 @@ const features = [
 
 export default function Features() {
   return (
-    <div className="bg-black  p-6 mt-32">
-      <div className="container grid grid-cols-1 md:grid-cols-3 gap-4 mx-auto">
+    <div className="mt-0 bg-black py-6 md:mt-32">
+      <div className="container mx-auto grid grid-cols-1 gap-4 md:grid-cols-3">
         {features.map((feat, index) => (
           <div
             key={index}
@@ -74,12 +74,12 @@ export default function Features() {
           >
             <div className="flex flex-col gap-2">
               <div className="flex items-center gap-2 text-gray-400">
-                <feat.icon className={`w-5 h-5 ${feat.iconColor}`} />
+                <feat.icon className={`size-5 ${feat.iconColor}`} />
                 <span className="text-2xl font-semibold text-white">
                   {feat.title}
                 </span>
               </div>
-              <div className={`text-sm  ${feat.valueColor}`}>
+              <div className={`text-sm ${feat.valueColor}`}>
                 {feat.description}
               </div>
             </div>

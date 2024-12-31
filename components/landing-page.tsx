@@ -8,9 +8,10 @@ import { Copy } from "lucide-react";
 
 import Header from "./header/header";
 import AvatarCircles from "./ui/landing-page/avatars";
+import BottomHero from "./ui/landing-page/bottom-hero";
 import Call from "./ui/landing-page/call";
-import CodeExample from "./ui/landing-page/code-example";
 import Counter from "./ui/landing-page/counter";
+import FeatureDescription from "./ui/landing-page/feature-description";
 import Features from "./ui/landing-page/feature-section";
 import Footer from "./ui/landing-page/footer";
 import Liquid from "./ui/landing-page/liquid-buttons";
@@ -36,18 +37,18 @@ export function LandingPage() {
     setTimeout(() => setCopied(false), 2000); // Reset after 2 seconds
   };
   return (
-    <div className="landing-background relative min-h-screen overflow-hidden bg-black text-white">
+    <div className="landing-background relative min-h-screen bg-black text-white">
       {/* Navigation */}
       <Header />
 
       {/* Hero Section */}
       <main className="container mx-auto flex h-[70vh] justify-between px-4 pt-28">
         {/* intro */}
-        <div className="flex flex-1 flex-col justify-center">
+        <div className="flex flex-1 flex-col justify-center text-center leading-8 md:text-left md:leading-10">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mb-6 text-5xl font-bold"
+            className="mb-6 inline text-5xl text-[clamp(1rem,10vw,2rem)] font-bold tracking-tight sm:text-[clamp(1rem,10vw,3rem)] lg:text-5xl"
           >
             <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
               Modern
@@ -61,13 +62,13 @@ export function LandingPage() {
           <p className="mb-8 text-xl text-zinc-400">
             Supports both Tailwind CSS and traditional Stylesheets.
           </p>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-col items-stretch gap-4 md:flex-row md:items-center">
             <Link href="/docs/introduction">
-              <button className="rounded-full bg-gradient-to-r from-orange-600 to-red-700 px-6 py-2 font-medium text-white hover:bg-blue-700">
+              <button className="w-full rounded-full bg-gradient-to-r from-orange-600 to-red-700 px-6 py-2 font-medium text-white hover:bg-blue-700">
                 Get Started →
               </button>
             </Link>
-            <div className="flex items-center gap-2 rounded-lg bg-zinc-900 px-4 py-2">
+            <div className="hidden items-center gap-2 rounded-lg bg-zinc-900 px-4 py-2 md:flex">
               <span className="font-mono text-sm">
                 $ npm i @trendui/react-native
               </span>
@@ -80,7 +81,7 @@ export function LandingPage() {
         </div>
 
         {/* Floating UI Elements */}
-        <div className="relative flex-1">
+        <div className="relative hidden flex-1 md:block">
           <AnimatedCircularProgressBar className="absolute left-32 top-0" />
           <div className="right-0 flex justify-end gap-4">
             <LoadingButton className="" />
@@ -101,8 +102,76 @@ export function LandingPage() {
       {/* featuer section */}
       <Features />
 
-      {/* code examples */}
-      <CodeExample />
+      {/* <section className="container mx-auto min-h-screen">
+        <div className="sticky top-[100px] flex">
+          <div>
+            <div>Effortless customization</div>
+            <div>Sane defaults</div>
+            <div>Easy Theming</div>
+            <div>Standout Design </div>
+            <div>Easy Installation </div>
+            <div>Move fast </div>
+            <div>Works seamless with Expo and react-native-cli </div>
+          </div>
+          <div className="flex-1 bg-red-950">
+            <p>
+              Effortely cusstomize whateever components you want Lorem ipsum
+              dolor sit amet consectetur adipisicing elit. Recusandae sint
+              quidem ex alias hic adipisci totam consequatur corporis, dolor,
+              sequi facilis iure pariatur beatae assumenda eveniet. Eum nemo
+              reprehenderit eveniet.
+            </p>
+          </div>
+          <div className="flex-1 bg-red-950">
+            <p>
+              Sane defaults Lorem ipsum
+              dolor sit amet consectetur adipisicing elit. Recusandae sint
+              quidem ex alias hic adipisci totam consequatur corporis, dolor,
+              sequi facilis iure pariatur beatae assumenda eveniet. Eum nemo
+              reprehenderit eveniet.
+            </p>
+          </div>
+          <div className="flex-1 bg-red-950">
+            <p>
+              Easy theming Lorem ipsum
+              dolor sit amet consectetur adipisicing elit. Recusandae sint
+              quidem ex alias hic adipisci totam consequatur corporis, dolor,
+              sequi facilis iure pariatur beatae assumenda eveniet. Eum nemo
+              reprehenderit eveniet.
+            </p>
+          </div>
+          <div className="flex-1 bg-red-950">
+            <p>
+              Standout design Lorem ipsum
+              dolor sit amet consectetur adipisicing elit. Recusandae sint
+              quidem ex alias hic adipisci totam consequatur corporis, dolor,
+              sequi facilis iure pariatur beatae assumenda eveniet. Eum nemo
+              reprehenderit eveniet.
+            </p>
+          </div>
+          <div className="flex-1 bg-red-950">
+            <p>
+              Easy installation you want Lorem ipsum
+              dolor sit amet consectetur adipisicing elit. Recusandae sint
+              quidem ex alias hic adipisci totam consequatur corporis, dolor,
+              sequi facilis iure pariatur beatae assumenda eveniet. Eum nemo
+              reprehenderit eveniet.
+            </p>
+          </div>
+          <div className="flex-1 bg-red-950">
+            <p>
+              Move fast Lorem ipsum
+              dolor sit amet consectetur adipisicing elit. Recusandae sint
+              quidem ex alias hic adipisci totam consequatur corporis, dolor,
+              sequi facilis iure pariatur beatae assumenda eveniet. Eum nemo
+              reprehenderit eveniet.
+            </p>
+          </div>
+        </div>
+      </section> */}
+
+      <FeatureDescription />
+      <BottomHero />
 
       {/* footer */}
       <Footer />

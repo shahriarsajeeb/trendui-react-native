@@ -19,9 +19,9 @@ const Navbar = () => {
   }, [pathName, setActiveRoute]);
 
   return (
-    <>
+    <div className="hidden md:block">
       {NavItems.map((i: NavItemsType, index: number) => (
-        <Link href={i.href} key={index}>
+        <Link href={i.href} key={index} >
           <button
             className={`${
               i.href === activeRoute ? "text-white" : "text-zinc-400"
@@ -31,7 +31,7 @@ const Navbar = () => {
           </button>
         </Link>
       ))}
-    </>
+    </div>
   );
 };
 

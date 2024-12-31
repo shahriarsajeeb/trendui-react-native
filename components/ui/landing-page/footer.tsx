@@ -1,32 +1,32 @@
+import Image from "next/image";
 import Link from "next/link";
+
 import { Github, Twitter } from "lucide-react";
-import { DiscIcon as Discord } from "lucide-react";
+
+import DiscordIcon from "../../../public/discord.svg";
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white py-16 px-4">
-      <div className="max-w-6xl mx-auto space-y-8">
-        {/* Header Section */}
-        <div className="text-center space-y-4">
-          <h2 className="text-5xl font-bold">Community</h2>
-          <p className="text-gray-400 text-lg">
+    <footer className="bg-black py-8 text-white">
+      <div className="container mx-auto space-y-8 px-4">
+        <div className="space-y-4 text-center">
+          <h2 className="text-3xl font-bold md:text-5xl">Community</h2>
+          <p className="text-base text-gray-400 md:text-lg">
             Get involved in our community. Everyone is welcome!
           </p>
         </div>
 
-        {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-          {/* X Card */}
+        <div className="mt-8 flex flex-col gap-4 md:mt-12 md:flex-row md:items-stretch md:justify-between md:gap-8">
           <Link
             href="https://x.com"
             target="_blank"
-            className="bg-zinc-900 p-6 rounded-lg hover:bg-zinc-800 transition-colors group"
+            className="group flex flex-1 flex-col rounded-lg bg-zinc-900 p-4 transition-colors hover:bg-zinc-800 md:p-6"
           >
-            <div className="flex items-center gap-3 mb-4">
-              <Twitter className="w-6 h-6" />
+            <div className="mb-4 flex items-center gap-3">
+              <Twitter className="size-6" />
               <span className="font-semibold">X</span>
               <svg
-                className="w-4 h-4 ml-auto opacity-0 group-hover:opacity-100 transition-opacity"
+                className="ml-auto size-4 opacity-0 transition-opacity group-hover:opacity-100"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -39,22 +39,27 @@ export default function Footer() {
                 />
               </svg>
             </div>
-            <p className="text-gray-400">
+            <p className="text-sm text-gray-400 md:text-base">
               For announcements, tips and general information.
             </p>
           </Link>
 
-          {/* Discord Card */}
           <Link
             href="https://discord.com"
             target="_blank"
-            className="bg-zinc-900 p-6 rounded-lg hover:bg-zinc-800 transition-colors group"
+            className="group flex flex-1 flex-col rounded-lg bg-zinc-900 p-4 transition-colors hover:bg-zinc-800 md:p-6"
           >
-            <div className="flex items-center gap-3 mb-4">
-              <Discord className="w-6 h-6" />
+            <div className="mb-4 flex items-center gap-3">
+              <Image
+                src={DiscordIcon}
+                alt="Discord"
+                width={24}
+                height={24}
+                className="text-white"
+              />
               <span className="font-semibold">Discord</span>
               <svg
-                className="w-4 h-4 ml-auto opacity-0 group-hover:opacity-100 transition-opacity"
+                className="ml-auto size-4 opacity-0 transition-opacity group-hover:opacity-100"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -67,22 +72,21 @@ export default function Footer() {
                 />
               </svg>
             </div>
-            <p className="text-gray-400">
+            <p className="text-sm text-gray-400 md:text-base">
               To get involved in the community, ask questions and share tips.
             </p>
           </Link>
 
-          {/* GitHub Card */}
           <Link
             href="https://github.com"
             target="_blank"
-            className="bg-zinc-900 p-6 rounded-lg hover:bg-zinc-800 transition-colors group"
+            className="group flex flex-1 flex-col rounded-lg bg-zinc-900 p-4 transition-colors hover:bg-zinc-800 md:p-6"
           >
-            <div className="flex items-center gap-3 mb-4">
-              <Github className="w-6 h-6" />
+            <div className="mb-4 flex items-center gap-3">
+              <Github className="size-6" />
               <span className="font-semibold">Github</span>
               <svg
-                className="w-4 h-4 ml-auto opacity-0 group-hover:opacity-100 transition-opacity"
+                className="ml-auto size-4 opacity-0 transition-opacity group-hover:opacity-100"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -95,14 +99,13 @@ export default function Footer() {
                 />
               </svg>
             </div>
-            <p className="text-gray-400">
+            <p className="text-sm text-gray-400 md:text-base">
               To report bugs, request features and contribute to the project.
             </p>
           </Link>
         </div>
 
-        {/* Copyright */}
-        <div className="text-center text-gray-400 text-sm pt-8">
+        <div className="pt-6 text-center text-sm text-gray-400 md:pt-8">
           © {new Date().getFullYear()} TrendUI All rights reserved.
         </div>
       </div>
