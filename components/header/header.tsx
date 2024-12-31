@@ -69,7 +69,7 @@ const Header = () => {
           </Link>
 
           <div className="flex items-stretch gap-3 md:gap-6">
-            <div className="hidden md:block">
+            <div className="hidden md:flex">
               <Navbar />
             </div>
 
