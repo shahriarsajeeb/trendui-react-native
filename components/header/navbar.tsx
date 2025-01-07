@@ -1,8 +1,9 @@
-import { NavItems } from "@/configs/constans";
-import useRouteChange from "@/hooks/useRoutechange";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
+
+import { NavItems } from "@/configs/constans";
+import useRouteChange from "@/hooks/useRoutechange";
 
 const Navbar = () => {
   const { activeRoute, setActiveRoute } = useRouteChange();
@@ -12,19 +13,19 @@ const Navbar = () => {
     if (pathName.startsWith("/docs/components")) {
       setActiveRoute("/docs/components/button");
     } else if (pathName.startsWith("/docs")) {
-      setActiveRoute("/docs/introduction"); 
+      setActiveRoute("/docs/introduction");
     } else {
       setActiveRoute(pathName);
     }
   }, [pathName, setActiveRoute]);
 
   return (
-    <div className="hidden md:flex gap-4 items-center text-lg">
+    <div className="hidden items-center gap-4 text-lg md:flex">
       {NavItems.map((i: NavItemsType, index: number) => (
-        <Link href={i.href} key={index} >
+        <Link href={i.href} key={index}>
           <button
             className={`${
-              i.href === activeRoute ? "text-white " : "text-zinc-400"
+              i.href === activeRoute ? "text-white" : "text-zinc-400"
             } hover:text-white`}
           >
             {i.title}

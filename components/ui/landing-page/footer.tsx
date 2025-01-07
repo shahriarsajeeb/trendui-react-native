@@ -7,7 +7,7 @@ import DiscordIcon from "../../../public/discord.svg";
 
 export default function Footer() {
   return (
-    <footer className="bg-black py-8 text-white">
+    <footer className="mt-20 bg-black py-8 text-white">
       <div className="container mx-auto space-y-8 px-4">
         <div className="space-y-4 text-center">
           <h2 className="text-3xl font-bold md:text-5xl">Community</h2>

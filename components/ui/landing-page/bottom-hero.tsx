@@ -5,8 +5,8 @@ import ReactIcon from "../../../public/react.svg";
 
 export default function BottomHero() {
   return (
-    <div className="bg-transparent p-8 backdrop-blur-2xl">
-      <div className="mx-auto max-w-7xl">
+    <div className="mt-20 bg-transparent p-8 backdrop-blur-2xl">
+      <div className="container mx-auto">
         <div className="flex flex-col md:flex-row">
           <div className="w-full space-y-3 md:w-1/2 md:space-y-8">
             <h1 className="inline text-[clamp(1rem,10vw,2rem)] font-semibold tracking-tight sm:text-[clamp(1rem,10vw,3rem)] lg:text-5xl">
@@ -16,7 +16,7 @@ export default function BottomHero() {
               </span>
             </h1>
 
-            <div className="flex items-stretch gap-4">
+            <div className="flex items-center gap-4">
               <Link href="/docs/introduction">
                 <button className="rounded-full bg-gradient-to-r from-orange-600 to-red-700 px-6 py-2 font-medium text-white hover:bg-blue-700">
                   Get Started →
