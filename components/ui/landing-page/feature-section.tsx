@@ -64,7 +64,7 @@ export default function Features() {
         {features.map((feat, index) => (
           <div
             key={index}
-            className={`${feat.bgColor} h-32 rounded-2xl p-4 shadow-lg transition-transform duration-200 ease-in-out hover:scale-105`}
+            className={`${feat.bgColor} cursor-pointer h-32 rounded-2xl p-4 shadow-lg transition-transform`}
             style={{
               backgroundImage:
                 "linear-gradient(#ffffff36 1px, transparent 1px), linear-gradient(to right, #ffffff36 1px, transparent 1px)",

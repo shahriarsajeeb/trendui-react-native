@@ -1,23 +1,9 @@
 "use client";
 import { motion } from "framer-motion";
-import { Copy, Github, Search } from "lucide-react";
+import { Copy, Search } from "lucide-react";
 import { useState } from "react";
-import AvatarCircles from "./ui/landing-page/avatars";
-import Call from "./ui/landing-page/call";
-import Counter from "./ui/landing-page/counter";
 import Features from "./ui/landing-page/feature-section";
 import Footer from "./ui/landing-page/footer";
-import Liquid from "./ui/landing-page/liquid-buttons";
-import LoadingButton from "./ui/landing-page/loading-button";
-import Notch from "./ui/landing-page/notch";
-import NotificationBell from "./ui/landing-page/notification-bell";
-import Pagination from "./ui/landing-page/pagination";
-import ProductCard from "./ui/landing-page/product-card";
-import { AnimatedCircularProgressBar } from "./ui/landing-page/progress";
-import TooggleSwitch from "./ui/landing-page/toggle-switch";
-import Image from "next/image";
-import Mesh from "../public/mesh.svg";
-import Background from "./ui/landing-page/background";
 import Link from "next/link";
 import Header from "./header/header";
 
@@ -32,7 +18,7 @@ export function LandingPage() {
   const handleCopy = () => {
     navigator.clipboard.writeText("npm i @trendui/react-native");
     setCopied(true);
-    setTimeout(() => setCopied(false), 2000); // Reset after 2 seconds
+    setTimeout(() => setCopied(false), 2000); 
   };
   return (
     <div className="landing-background min-h-screen  bg-black text-white relative overflow-hidden">
@@ -79,22 +65,7 @@ export function LandingPage() {
         </div>
 
         {/* Floating UI Elements */}
-        <div className="relative flex-1">
-          <AnimatedCircularProgressBar className="absolute top-0 left-32" />
-          <div className="flex justify-end gap-4 right-[0]">
-            <LoadingButton className="" />
-            <NotificationBell className="" />
-            <TooggleSwitch className="" />
-          </div>
-
-          <Call className="absolute top-[350px] right-0" />
-          <ProductCard className="absolute top-[130px] left-[50%]" />
-          <AvatarCircles className="absolute right-0 top-[130px]" />
-          <Pagination className="absolute right-[-60px] top-[200px]" />
-          <Counter className="absolute top-[265px] right-6" />
-          <Liquid className="absolute top-[220px] left-0" />
-          <Notch className="absolute top-[350px] left-[-50px]" />
-        </div>
+        <div className="relative flex-1"></div>
       </main>
 
       {/* featuer section */}
