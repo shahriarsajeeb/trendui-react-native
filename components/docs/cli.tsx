@@ -1,9 +1,16 @@
-import React from 'react'
+import { fetchMarkdown } from "@/lib/utils";
+import { Markdown } from "../Markdown";
 
-const CLIPage = () => {
+export default async function CLIPage() {
+const markdown = await fetchMarkdown(
+      `/CLI.md`
+    );
+
   return (
-    <div>CLIPage</div>
-  )
+    <div className="space-y-6 mt-8">
+          <Markdown>
+          {markdown}  
+          </Markdown>
+        </div>
+  );
 }
-
-export default CLIPage

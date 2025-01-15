@@ -2,7 +2,7 @@
 
 import { Clipboard, ClipboardCheck } from "lucide-react";
 import Link from "next/link";
-import React, { memo, useState } from "react";
+import { memo, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Button } from "./ui/button";
@@ -60,13 +60,13 @@ const NonMemoizedMarkdown = ({ children }: { children: string }) => {
         <div className="relative group">
           <pre
             {...props}
-            className={`${className} text-[9px] max-w-prose md:text-sm w-[90%] md:max-w-full overflow-x-auto bg-zinc-100 p-4 rounded-lg mt-3 dark:bg-zinc-800`}
+            className={`${className} text-[9px] max-w-prose md:text-sm w-[90%] md:max-w-full overflow-x-auto bg-zinc-100 p-4 rounded-lg mt-3 dark:bg-[#18181B]`}
           >
             <code className={match[1]}>{children}</code>
           </pre>
           <Button
             onClick={() => copyToClipboard(codeContent)}
-            className="absolute top-2 right-2 dark:bg-neutral-700 dark:text-white text-xs md:text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity"
+            className="absolute top-2 right-2 dark:bg-neutral-800 dark:text-white text-xs md:text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity"
           >
             {!isCopied ? (<Clipboard />):(<ClipboardCheck />)}
           </Button>
