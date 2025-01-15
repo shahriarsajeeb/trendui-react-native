@@ -1,0 +1,10 @@
+{
+  // List of extensions which should be recommended for users of this workspace.
+  "recommendations": [
+    "bradlc.vscode-tailwindcss",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "madanbazgai.snippetx",
+    "YoavBls.pretty-ts-errors"
+  ]
+}
