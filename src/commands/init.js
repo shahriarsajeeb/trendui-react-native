@@ -1,4 +1,3 @@
-// src/commands/init.js
 const inquirer = require("inquirer");
 const fs = require("fs-extra");
 const path = require("path");
@@ -80,7 +79,7 @@ module.exports = {
         "babel.config.js",
         "babel.config.mjs",
       ];
-      let babelUpdated = false;
+      let babelFileFound = false;
 
       for (const file of babelFiles) {
         const babelPath = path.join(process.cwd(), file);
@@ -98,16 +97,28 @@ module.exports = function (api) {
 `;
           await fs.writeFile(babelPath, babelConfigContent);
           console.log(chalk.green(`✔ Babel configuration updated in ${file}!`));
-          babelUpdated = true;
+          babelFileFound = true;
           break;
         }
       }
 
-      if (!babelUpdated) {
+      if (!babelFileFound) {
+        // If no existing Babel config is found, create one
+        const newBabelPath = path.join(process.cwd(), "babel.config.js");
+        const newBabelConfigContent = `
+module.exports = function (api) {
+  api.cache(true);
+  return {
+    presets: [
+      ["babel-preset-expo", { jsxImportSource: "nativewind" }],
+      "nativewind/babel",
+    ],
+  };
+};
+`;
+        await fs.writeFile(newBabelPath, newBabelConfigContent);
         console.log(
-          chalk.yellow(
-            "⚠ No existing Babel configuration found. Please create one manually if needed."
-          )
+          chalk.green("✔ Babel configuration created as babel.config.js!")
         );
       }
     }
