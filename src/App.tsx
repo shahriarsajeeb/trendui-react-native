@@ -11,17 +11,16 @@ import { Button, Image, Text } from "./components";
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title} value="Welcome to TrendUI" />
-      <Text
-        variant="paragraph"
-        className="text-center leading-2 mb-4"
-        value="A modern UI component library for React Native / Expo, built with flexibility, accessibility, and design in mind."
-      />
+      <Text style={styles.title}>Welcome to TrendUI</Text>
+      <Text variant="paragraph" className="text-center leading-2 mb-4">
+        A modern UI component library for React Native / Expo, built with
+        flexibility, accessibility, and design in mind.
+      </Text>
 
-      <Text
-        value="Get started by exploring our components: Button, Select, TextInput, and
-        more. Build stunning mobile apps effortlessly."
-      />
+      <Text>
+        Get started by exploring our components: Button, Select, TextInput, and
+        more. Build stunning mobile apps effortlessly.
+      </Text>
     </View>
   );
 }

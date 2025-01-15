@@ -10,7 +10,6 @@ import { responsiveFontSize } from "@trendui/react-native/src/utils/responsive.f
 /**
  * @typedef TextProps
  * Extends React Native's TextProps to include additional properties for theming and customization.
- * @property {string} value - The text to display.
  * @property {"lg" | "xl" | "2xl" | "3xl" | number} size - Optional. Custom size of the text.
  * @property {string} className - Optional. TailwindCSS classes for styling.
  * @property {"label" | "title" | "header" | "paragraph" | "baseText"} variant - Optional. Predefined styles for different text types.
@@ -18,7 +17,6 @@ import { responsiveFontSize } from "@trendui/react-native/src/utils/responsive.f
  * @property {"normal" | "bold" | "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900"} fontWeight - Optional. Font weight for the text.
  */
 export interface TextProps extends RNTextProps {
-  value: string;
   size?: "lg" | "xl" | "2xl" | "3xl" | number;
   className?: string;
   variant?: "label" | "title" | "header" | "paragraph" | "baseText";
@@ -44,7 +42,7 @@ export interface TextProps extends RNTextProps {
  * @returns {JSX.Element} - The rendered text component.
  */
 const Text: React.FC<TextProps> = ({
-  value,
+  children,
   size,
   style,
   className,
@@ -95,7 +93,7 @@ const Text: React.FC<TextProps> = ({
 
   return (
     <RNText style={combinedStyles} {...props}>
-      {value}
+      {children}
     </RNText>
   );
 };

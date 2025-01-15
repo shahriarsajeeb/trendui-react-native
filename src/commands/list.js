@@ -1,4 +1,3 @@
-// src/commands/list.js
 const chalk = require("chalk");
 const { AVAILABLE_COMPONENTS } = require("./add");
 

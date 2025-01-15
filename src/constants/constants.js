@@ -27,6 +27,36 @@ const AVAILABLE_COMPONENTS = {
     description: "Select options component",
     dependencies: [],
   },
+  accordion: {
+    name: "Accordion",
+    description: "Accordion component",
+    dependencies: [],
+  },
+  tabs: {
+    name: "Tabs",
+    description: "Tabs component",
+    dependencies: [],
+  },
+  avatar: {
+    name: "Avatar",
+    description: "Avatar component",
+    dependencies: [],
+  },
+  badge: {
+    name: "Badge",
+    description: "Badge component",
+    dependencies: [],
+  },
+  checkbox: {
+    name: "Checkbox",
+    description: "Checkbox component",
+    dependencies: [],
+  },
+  card: {
+    name: "Card",
+    description: "Card component",
+    dependencies: [],
+  },
   // card: {
   //   name: "Card",
   //   description: "Container component with shadow and border radius",
