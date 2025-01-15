@@ -13,7 +13,6 @@ async function selectComponents() {
     value: key,
     short: key,
   }));
-
   const { components } = await inquirer.prompt([
     {
       type: "checkbox",
