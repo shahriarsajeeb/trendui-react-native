@@ -4,6 +4,9 @@ import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
+import Ring from "../../../assests/ring.png";
 
 const Notch = ({ className }: { className: string }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -101,7 +104,7 @@ const Notch = ({ className }: { className: string }) => {
         >
           <p className="text-xl text-white">2(bkm)</p>
           <motion.div
-            className="rounded-3xl overflow-hidden relative"
+            className="relative overflow-hidden rounded-3xl"
             animate={{
               height: isOpen ? 200 : 40,
               width: isOpen ? 200 : 40,
@@ -110,7 +113,7 @@ const Notch = ({ className }: { className: string }) => {
             transition={{ duration: 0.2 }}
           >
             <Image
-              src="/ring.png"
+              src={Ring}
               alt="Bossadi Zenith: I build things that live on the internet"
               fill
               className={cn(
@@ -136,7 +139,7 @@ const Notch = ({ className }: { className: string }) => {
               exit="exit"
               variants={presence}
               transition={{ duration: 0.2 }}
-              className="text-white mt-6"
+              className="mt-6 text-white"
             >
               {["Home", "About", "Contact"].map((item, index) => (
                 <motion.li key={item + index} variants={itemVariants}>
