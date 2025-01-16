@@ -4,7 +4,7 @@ The `TextInput` component is a powerful, flexible, and customizable text input f
 
 ---
 
-## 📦 Installation
+## Installation
 
 ```bash
 npx trendui add textinput
@@ -12,7 +12,7 @@ npx trendui add textinput
 
 --- 
 
-## ✨ Features
+## Features
 
 - **Multiple Variants**: Choose from `outlined`, `filled`, or `standard` styles.
 - **Dark and Light Themes**: Fully supports theming with `dark` and `light` modes.
@@ -24,7 +24,7 @@ npx trendui add textinput
 
 ---
 
-## 🔧 Props
+## Props
 
 | Prop             | Type                                | Default           | Description                                                                 |
 |-------------------|-------------------------------------|-------------------|-----------------------------------------------------------------------------|
@@ -49,7 +49,7 @@ npx trendui add textinput
 
 ---
 
-## 🚀 Usage
+## Usage
 
 ### Basic Example
 
@@ -72,7 +72,7 @@ export default function App() {
 
 ---
 
-### Variants
+## Variants
 
 Use different styles by setting the `variant` prop.
 
@@ -84,7 +84,7 @@ Use different styles by setting the `variant` prop.
 
 ---
 
-### Dark Mode
+## Dark Mode
 
 Easily enable dark mode by setting the `theme` prop to `"dark"`.
 
@@ -98,7 +98,7 @@ Easily enable dark mode by setting the `theme` prop to `"dark"`.
 
 ---
 
-### Multiline Input
+## Multiline Input
 
 Support multiline text input by setting `multiline` to `true`.
 
@@ -112,7 +112,7 @@ Support multiline text input by setting `multiline` to `true`.
 
 ---
 
-### Validation
+## Validation
 
 Enable validation for email and password fields, along with custom length limits.
 
@@ -134,7 +134,7 @@ Enable validation for email and password fields, along with custom length limits
 
 ---
 
-### Error Handling
+## Error Handling
 
 Display dynamic error messages for validation issues. You can style the error text using `errorStyle`.
 
@@ -150,7 +150,7 @@ Display dynamic error messages for validation issues. You can style the error te
 
 ---
 
-### TailwindCSS Integration
+## TailwindCSS Integration
 
 Style the input using TailwindCSS classes.
 

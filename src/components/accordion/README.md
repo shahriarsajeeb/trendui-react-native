@@ -4,6 +4,12 @@ A reusable, customizable, and lightweight Accordion component for React Native w
 
 ---
 
+## 📦 Installation
+```bash
+npx trendui add accordion
+```
+---
+
 ## Features
 
 - Fully customizable styles through `customStyles` and `className`.

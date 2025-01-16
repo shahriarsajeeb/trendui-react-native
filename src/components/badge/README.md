@@ -4,10 +4,10 @@ The `Badge` component is a versatile notification bubble that can be used alongs
 
 ---
 
-## Installation
-
-Ensure you have `trendui` installed in your project. No additional dependencies are required as `trendui` uses common React Native packages.
-
+## 📦 Installation
+```bash
+npx trendui add badge
+```
 ---
 
 ## Props

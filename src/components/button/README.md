@@ -4,13 +4,13 @@ The `Button` component is a versatile and customizable button element designed f
 
 ---
 
-## 📦 Installation
+## Installation
 ```bash
 npx trendui add button
 ```
 ---
 
-## ✨ Features
+## Features
 
 - **Variants**: Predefined styles for primary, secondary, danger, and success buttons.
 - **Loading State**: Built-in support for showing a loading spinner while disabling the button.
@@ -21,7 +21,7 @@ npx trendui add button
 
 ---
 
-## 🔧 Props
+## Props
 
 | Prop        | Type                                                      | Default    | Description                                                                 |
 |-------------|-----------------------------------------------------------|------------|-----------------------------------------------------------------------------|
@@ -37,7 +37,7 @@ npx trendui add button
 
 ---
 
-## 🚀 Usage
+## Usage
 
 ### Basic Usage
 
@@ -54,7 +54,7 @@ export default function App() {
 
 ---
 
-### Button Variants
+## Button Variants
 
 ```tsx
 <Button value="Primary" variant="primary" onPress={() => {}} />
@@ -65,7 +65,7 @@ export default function App() {
 
 ---
 
-### Loading State
+## Loading State
 
 ```tsx
 <Button value="Loading..." loading onPress={() => {}} />
@@ -73,7 +73,7 @@ export default function App() {
 
 ---
 
-### Disabled State
+## Disabled State
 
 ```tsx
 <Button value="Disabled" disabled onPress={() => {}} />
@@ -81,7 +81,7 @@ export default function App() {
 
 ---
 
-### Custom Styling
+## Custom Styling
 
 ```tsx
 <Button
@@ -94,7 +94,7 @@ export default function App() {
 
 ---
 
-### TailwindCSS Styling
+## TailwindCSS Styling
 
 ```tsx
 <Button

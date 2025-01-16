@@ -4,7 +4,7 @@ The `Avatar` component is a customizable React Native component designed to disp
 
 ---
 
-## 📦 Installation
+## Installation
 
 Since the `Avatar` component is part of your library, you can add it via your library's CLI:
 
@@ -14,7 +14,7 @@ npx trendui add avatar
 
 ---
 
-## ✨ Features
+## Features
 
 - **Image Support**: Display an avatar using a URL or local image source.
 - **Fallback Initials**: Automatically show user initials if no image is provided.
@@ -24,7 +24,7 @@ npx trendui add avatar
 
 ---
 
-## 🔧 Props
+## Props
 
 | Prop            | Type                  | Default     | Description                                                     |
 |------------------|-----------------------|-------------|-----------------------------------------------------------------|
@@ -38,7 +38,7 @@ npx trendui add avatar
 
 ---
 
-## 🚀 Usage
+## Usage
 
 ### Basic Usage
 ```tsx
@@ -83,7 +83,7 @@ export default App;
 
 ---
 
-## 🛠 Customization
+## Customization
 
 ### Custom Styles
 Use the `customStyles` prop to pass an object of styles for specific parts of the component:

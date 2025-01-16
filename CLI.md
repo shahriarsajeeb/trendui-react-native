@@ -1,12 +1,4 @@
-## 🌟 TrendUI CLI - Your Gateway to Seamless Integration
-
-The **TrendUI CLI** is a powerful command-line tool designed to simplify and automate the setup and management of TrendUI components in your React Native project. With its intuitive commands, the CLI helps you initialize TrendUI, add components, and configure project settings, making your development process faster and more efficient.
-
----
-
-### Commands and Usage
-
-#### 1. Initialize TrendUI in Your Project
+## 1. Initialize TrendUI in Your Project
 The `init` command sets up TrendUI and configures it based on your preferences.
 
 **Command:**
@@ -34,7 +26,7 @@ Based on your responses:
 
 ---
 
-#### 2. Add Specific Components
+## 2. Add Specific Components
 Use the `add` command to add TrendUI components to your project.
 
 **Command:**
@@ -50,7 +42,7 @@ This adds the `Button` and `TextInput` components to your project.
 
 ---
 
-#### 3. List Available Components
+## 3. List Available Components
 The `list` command displays all components available in TrendUI.
 
 **Command:**
@@ -60,7 +52,7 @@ npx trendui list
 
 ---
 
-### Example Workflow
+## Example Workflow
 
 1. Run the CLI to initialize TrendUI:
    ```bash
@@ -92,7 +84,7 @@ npx trendui list
 
 ---
 
-### Configuration File
+## Configuration File
 
 The `trendui.config.js` file stores your project’s TrendUI configuration. Example:
 
@@ -106,7 +98,7 @@ module.exports = {
 
 ---
 
-### Advanced Tailwind CSS Setup
+## Advanced Tailwind CSS Setup
 If Tailwind CSS is enabled during initialization, the CLI will:
 
 1. Create a `tailwind.config.js` file with the following content:

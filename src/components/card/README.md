@@ -2,6 +2,14 @@
 
 The **Card** component is a versatile and customizable component for displaying content, supporting themes, background images, overlays, and content styling.
 
+---
+
+## 📦 Installation
+```bash
+npx trendui add card
+```
+---
+
 ## Features
 
 - **Customizable Themes:** Light and dark themes supported.

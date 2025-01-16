@@ -4,7 +4,8 @@ Welcome to the **TrendUI** installation guide! Follow these steps to install the
 
 ---
 
-### Prerequisites
+## Prerequisites
+
 Before you begin, ensure you have the following installed on your system:
 - **Node.js** (v14 or later)
 - **npm** (v6 or later) or **Yarn** (v1.22 or later)
@@ -13,9 +14,10 @@ Additionally, your React Native project should be running React Native version 0
 
 ---
 
-### Installation
+## Installation
 
 #### 1. Install the TrendUI Library
+
 Add the TrendUI library to your project using either npm or Yarn:
 
 **Using npm**:
@@ -32,7 +34,7 @@ This command installs the library and its required dependencies into your projec
 
 ---
 
-### Additional Resources
+## Additional Resources
 - [TrendUI Documentation](https://trendui.com/docs)
 - [React Native Setup Guide](https://reactnative.dev/docs/environment-setup)
 

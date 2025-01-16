@@ -3,6 +3,7 @@
 **TrendUI** is a modern and lightweight React Native UI library designed to simplify mobile app development. With its intuitive and developer-friendly approach, it offers a wide array of customizable and prebuilt components that streamline the process of creating stunning mobile applications. Whether you're building a small project or a large-scale app, TrendUI equips you with the tools needed to craft a consistent and visually appealing user experience.
 
 ## Why Choose TrendUI?
+
 TrendUI bridges the gap between functionality and aesthetics, offering developers an all-in-one solution to quickly create professional-grade interfaces. Say goodbye to reinventing the wheel for every project and embrace a library that adapts seamlessly to your design requirements.
 
 ## ✨ Key Features
@@ -20,4 +21,3 @@ TrendUI bridges the gap between functionality and aesthetics, offering developer
 ---
 
 With TrendUI, crafting exceptional mobile applications has never been easier. Join a growing community of developers who trust TrendUI to bring their ideas to life with speed and style. Start building today and elevate your app development experience to the next level!
-

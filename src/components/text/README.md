@@ -2,15 +2,16 @@
 
 The `Text` component is a highly customizable and responsive text element designed for React Native applications. It supports theming, TailwindCSS classes, and responsive font sizes to provide a seamless and scalable typography solution.
 
+
 ---
 
-## 📦 Installation
+## Installation
 ```bash
 npx trendui add text
 ```
 ---
 
-## ✨ Features
+## Features
 
 - **Customizable Font Sizes**: Supports predefined sizes (`lg`, `xl`, `2xl`, `3xl`) or custom numeric values.
 - **Variants**: Predefined styles (`label`, `title`, `header`, `paragraph`, `baseText`) for different use cases.
@@ -19,7 +20,7 @@ npx trendui add text
 - **TailwindCSS Support**: Use `className` for additional styling with TailwindCSS.
 - **Responsive Design**: Integrates with `responsiveFontSize` for adaptive typography.
 
-## 🔧 Props
+## Props
 
 | Prop        | Type                                                                         | Default  | Description                                                                                       |
 |-------------|------------------------------------------------------------------------------|----------|---------------------------------------------------------------------------------------------------|
@@ -33,7 +34,7 @@ npx trendui add text
 
 ---
 
-## 🚀 Usage
+## Usage
 
 ### Basic Usage
 
@@ -50,7 +51,7 @@ export default function App() {
 
 ---
 
-### Using Variants
+## Using Variants
 
 ```tsx
 import React from "react";
@@ -70,7 +71,7 @@ export default function App() {
 
 ---
 
-### TailwindCSS Styling
+## TailwindCSS Styling
 
 ```tsx
 import React from "react";
@@ -89,7 +90,7 @@ export default function App() {
 
 ---
 
-### Custom Font Size
+## Custom Font Size
 
 ```tsx
 import React from "react";

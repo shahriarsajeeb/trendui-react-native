@@ -4,6 +4,12 @@ The `Checkbox` component is a versatile, customizable, and user-friendly React N
 
 ---
 
+## 📦 Installation
+```bash
+npx trendui add checkbox
+```
+---
+
 ## Features
 
 - **Customizable**: Change size, colors, and styles of the checkbox and label.
@@ -11,16 +17,6 @@ The `Checkbox` component is a versatile, customizable, and user-friendly React N
 - **Accessible**: Includes optional labels for better user understanding.
 - **Lightweight**: Easy to integrate with minimal dependencies.
 - **Flexible**: Support for left or right label positioning and various customizations.
-
----
-
-## Installation
-
-This component is part of the `@/trendui` package. Install the library:
-
-```bash
-npm install @trendui
-```
 
 ---
 
