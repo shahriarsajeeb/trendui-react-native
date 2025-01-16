@@ -61,7 +61,7 @@ export default function RightSidebar() {
                   href={`#${slug}`}
                   className={
                     isActive
-                      ? "font-bold text-blue-500 text-primary"
+                      ? "font-bold text-blue-500"
                       : "text-primary opacity-70"
                   }
                 >

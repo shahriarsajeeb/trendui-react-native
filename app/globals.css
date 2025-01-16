@@ -20,7 +20,7 @@ html {
 }
 
 .landing-background {
-  background-image: url("/mesh.svg");
+  background-image: url("../assests/mesh.svg");
   background-position-x: right;
 }
 @keyframes l9 {
