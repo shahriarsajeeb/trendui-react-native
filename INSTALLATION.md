@@ -1,4 +1,4 @@
-## 🚀 Getting Started with TrendUI
+### 🚀 Getting Started with TrendUI
 
 Welcome to the **TrendUI** installation guide! Follow these steps to install the TrendUI library in your React Native project. This guide focuses solely on adding the library to your project.
 
