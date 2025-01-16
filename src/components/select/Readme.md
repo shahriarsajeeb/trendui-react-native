@@ -4,7 +4,7 @@ The `Select` component is a flexible and customizable dropdown component designe
 
 ---
 
-## 📦 Installation
+## Installation
 ```bash
 npx trendui add select
 ```
@@ -12,7 +12,7 @@ npx trendui add select
 ---
 
 
-## ✨ Features
+## Features
 
 - **Customizable Placeholder and Label**: Add descriptive labels and placeholders.
 - **Dynamic Options**: Pass an array of options to populate the dropdown.
@@ -24,7 +24,7 @@ npx trendui add select
 - **Modal-Based Dropdown**: Ensures proper display even on small screens.
 
 
-## 🔧 Props
+## Props
 
 | Prop                 | Type                                      | Default               | Description                                                                 |
 |----------------------|-------------------------------------------|-----------------------|-----------------------------------------------------------------------------|
@@ -49,7 +49,7 @@ npx trendui add select
 
 ---
 
-## 🚀 Usage
+## Usage
 
 ### Basic Usage
 
@@ -135,7 +135,7 @@ export default function App() {
 
 ---
 
-## 🛠 Customization
+## Customization
 
 ### Adding More Variants
 
@@ -143,12 +143,12 @@ To add more style variants, modify the `variant` prop and include custom styles 
 
 ---
 
-## 💬 Support
+## Support
 
-If you encounter any issues or have suggestions, please [open an issue](https://github.com/trendui/react-native/issues) on the repository.
+If you encounter any issues or have suggestions, please [open an issue](https://github.com/trend-ui/trendui-react-native/issues) on the repository.
 
 ---
 
-## 🛡 License
+## License
 
 This component is licensed under the **MIT License** as part of the TrendUI library.

@@ -107,13 +107,13 @@ Add TailwindCSS classes to specific parts of the component using the `className`
 
 ---
 
-## 💬 Support
+## Support
 
-For any issues or feature requests, please [open an issue](https://github.com/trendui/react-native/issues) in the repository.
+For any issues or feature requests, please [open an issue](https://github.com/trend-ui/trendui-react-native/issues) in the repository.
 
 ---
 
-## 🛡 License
+## License
 
 The Avatar component is licensed under the **MIT License** as part of the TrendUI library.
 

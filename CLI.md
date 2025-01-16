@@ -1,4 +1,4 @@
-## 1. Initialize TrendUI in Your Project
+## Initialize TrendUI in Your Project
 The `init` command sets up TrendUI and configures it based on your preferences.
 
 **Command:**
@@ -26,7 +26,7 @@ Based on your responses:
 
 ---
 
-## 2. Add Specific Components
+## Add Specific Components
 Use the `add` command to add TrendUI components to your project.
 
 **Command:**
@@ -42,7 +42,7 @@ This adds the `Button` and `TextInput` components to your project.
 
 ---
 
-## 3. List Available Components
+## List Available Components
 The `list` command displays all components available in TrendUI.
 
 **Command:**

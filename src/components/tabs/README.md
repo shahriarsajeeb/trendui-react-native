@@ -4,7 +4,7 @@ A flexible and reusable tabbed navigation component for React Native. Supports l
 
 ---
 
-## 📦 Installation
+## Installation
 
 ```bash
 npx trendui add tabs
@@ -143,7 +143,7 @@ Enable or disable animations using the `enableAnimation` prop.
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.
 
 ---
 

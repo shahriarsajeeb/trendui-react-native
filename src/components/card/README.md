@@ -4,7 +4,7 @@ The **Card** component is a versatile and customizable component for displaying 
 
 ---
 
-## 📦 Installation
+## Installation
 ```bash
 npx trendui add card
 ```

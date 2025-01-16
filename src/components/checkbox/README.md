@@ -4,7 +4,7 @@ The `Checkbox` component is a versatile, customizable, and user-friendly React N
 
 ---
 
-## 📦 Installation
+## Installation
 ```bash
 npx trendui add checkbox
 ```

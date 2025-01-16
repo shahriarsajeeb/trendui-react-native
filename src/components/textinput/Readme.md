@@ -10,7 +10,7 @@ The `TextInput` component is a powerful, flexible, and customizable text input f
 npx trendui add textinput
 ```
 
---- 
+---
 
 ## Features
 
@@ -26,26 +26,26 @@ npx trendui add textinput
 
 ## Props
 
-| Prop             | Type                                | Default           | Description                                                                 |
-|-------------------|-------------------------------------|-------------------|-----------------------------------------------------------------------------|
-| `label`          | `string`                           | `undefined`       | Label text for the input field.                                             |
-| `placeholder`    | `string`                           | `"Enter text"`    | Placeholder text for the input field.                                       |
-| `value`          | `string`                           | `""`              | Controlled value of the input field.                                        |
-| `onChangeText`   | `(text: string) => void`           | `undefined`       | Callback triggered on text change.                                          |
-| `errorStyle`     | `StyleProp<TextStyle>`             | `undefined`       | Custom styles for the error message.                                        |
-| `variant`        | `"outlined" | "filled" | "standard"` | `"outlined"`       | Input field style variant.                                                  |
-| `style`          | `StyleProp<TextStyle>`             | `undefined`       | Custom styles for the container.                                            |
-| `inputStyle`     | `StyleProp<TextStyle>`             | `undefined`       | Additional styles for the input field.                                      |
-| `labelStyle`     | `StyleProp<TextStyle>`             | `undefined`       | Custom styles for the label text.                                           |
-| `className`      | `string`                           | `undefined`       | TailwindCSS classes for the container.                                      |
-| `inputClassName` | `string`                           | `undefined`       | TailwindCSS classes for the input field.                                    |
-| `isPassword`     | `boolean`                          | `false`           | Enables secure text entry for password inputs.                              |
-| `showError`      | `boolean`                          | `true`            | Toggles the display of error messages.                                      |
-| `theme`          | `"light" | "dark"`                 | `"light"`         | Theme for the input field.                                                  |
-| `multiline`      | `boolean`                          | `false`           | Enables multiline text input.                                               |
-| `type`           | `"text" | "email" | "password"`    | `"text"`          | Input type for validation.                                                  |
-| `minLength`      | `number`                           | `undefined`       | Minimum length for input validation.                                        |
-| `maxLength`      | `number`                           | `undefined`       | Maximum length for input validation.                                        |
+| Prop             | Type                     | Default        | Description                                    |
+| ---------------- | ------------------------ | -------------- | ---------------------------------------------- | -------------------------- | -------------------------- |
+| `label`          | `string`                 | `undefined`    | Label text for the input field.                |
+| `placeholder`    | `string`                 | `"Enter text"` | Placeholder text for the input field.          |
+| `value`          | `string`                 | `""`           | Controlled value of the input field.           |
+| `onChangeText`   | `(text: string) => void` | `undefined`    | Callback triggered on text change.             |
+| `errorStyle`     | `StyleProp<TextStyle>`   | `undefined`    | Custom styles for the error message.           |
+| `variant`        | `"outlined"              | "filled"       | "standard"`                                    | `"outlined"`               | Input field style variant. |
+| `style`          | `StyleProp<TextStyle>`   | `undefined`    | Custom styles for the container.               |
+| `inputStyle`     | `StyleProp<TextStyle>`   | `undefined`    | Additional styles for the input field.         |
+| `labelStyle`     | `StyleProp<TextStyle>`   | `undefined`    | Custom styles for the label text.              |
+| `className`      | `string`                 | `undefined`    | TailwindCSS classes for the container.         |
+| `inputClassName` | `string`                 | `undefined`    | TailwindCSS classes for the input field.       |
+| `isPassword`     | `boolean`                | `false`        | Enables secure text entry for password inputs. |
+| `showError`      | `boolean`                | `true`         | Toggles the display of error messages.         |
+| `theme`          | `"light"                 | "dark"`        | `"light"`                                      | Theme for the input field. |
+| `multiline`      | `boolean`                | `false`        | Enables multiline text input.                  |
+| `type`           | `"text"                  | "email"        | "password"`                                    | `"text"`                   | Input type for validation. |
+| `minLength`      | `number`                 | `undefined`    | Minimum length for input validation.           |
+| `maxLength`      | `number`                 | `undefined`    | Maximum length for input validation.           |
 
 ---
 
@@ -89,11 +89,7 @@ Use different styles by setting the `variant` prop.
 Easily enable dark mode by setting the `theme` prop to `"dark"`.
 
 ```tsx
-<TextInput
-  label="Dark Mode Input"
-  placeholder="Type here..."
-  theme="dark"
-/>
+<TextInput label="Dark Mode Input" placeholder="Type here..." theme="dark" />
 ```
 
 ---
@@ -103,11 +99,7 @@ Easily enable dark mode by setting the `theme` prop to `"dark"`.
 Support multiline text input by setting `multiline` to `true`.
 
 ```tsx
-<TextInput
-  label="Comments"
-  placeholder="Write your feedback..."
-  multiline
-/>
+<TextInput label="Comments" placeholder="Write your feedback..." multiline />
 ```
 
 ---
@@ -165,18 +157,18 @@ Style the input using TailwindCSS classes.
 
 ---
 
-## 🛠 Customization
+## Customization
 
 You can extend the component with additional styles or logic for more complex use cases. For example, adding custom validation rules or new variants.
 
 ---
 
-## 💬 Support
+## Support
 
-If you encounter issues or have suggestions, feel free to [open an issue](https://github.com/trendui/react-native/issues) on our GitHub repository.
+If you encounter issues or have suggestions, feel free to [open an issue](https://github.com/trend-ui/trendui-react-native/issues) on our GitHub repository.
 
 ---
 
-## 🛡 License
+## License
 
 This component is licensed under the **MIT License** as part of the TrendUI library.

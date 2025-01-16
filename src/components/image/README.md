@@ -4,7 +4,7 @@ The `Image` component is a highly customizable, lightweight, and animated image 
 
 ---
 
-## 📦 Installation
+## Installation
 
 ```bash
 npx trendui add image
@@ -12,7 +12,7 @@ npx trendui add image
 
 ---
 
-## ✨ Features
+## Features
 
 - **Fade-In Animation**: Images fade in smoothly upon loading.
 - **Error Handling**: Displays a fallback text when the image fails to load.
@@ -21,7 +21,7 @@ npx trendui add image
 - **Performance-Optimized**: Leverages `Animated` for smooth transitions.
 
 
-## 🔧 Props
+## Props
 
 | Prop         | Type                     | Default           | Description                                                              |
 |--------------|--------------------------|-------------------|--------------------------------------------------------------------------|
@@ -35,7 +35,7 @@ npx trendui add image
 
 ---
 
-## 🚀 Usage
+## Usage
 
 ### Basic Usage
 
@@ -111,7 +111,7 @@ To style the image using TailwindCSS classes, use the `className` prop:
 
 ---
 
-## 🛠 Customization
+## Customization
 
 ### Adding Blur Effect
 
@@ -119,12 +119,12 @@ The `blurRadius` prop is available but currently not implemented. To implement, 
 
 ---
 
-## 💬 Support
+## Support
 
 If you encounter any issues or have suggestions, please [open an issue](https://github.com/trendui/react-native/issues) on the repository.
 
 ---
 
-## 🛡 License
+## License
 
 This component is licensed under the **MIT License** as part of the TrendUI library.

@@ -4,7 +4,7 @@ A reusable, customizable, and lightweight Accordion component for React Native w
 
 ---
 
-## 📦 Installation
+## Installation
 ```bash
 npx trendui add accordion
 ```
@@ -138,4 +138,3 @@ This component is open-source and available under the MIT License.
 ## Feedback
 
 For issues or feature requests, feel free to open an issue in the repository or contact the maintainer.
-```

@@ -4,7 +4,7 @@ The `Badge` component is a versatile notification bubble that can be used alongs
 
 ---
 
-## 📦 Installation
+## Installation
 ```bash
 npx trendui add badge
 ```

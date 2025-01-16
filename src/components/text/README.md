@@ -105,7 +105,7 @@ export default function App() {
 
 ---
 
-## 🛠 Customization
+## Customization
 
 ### Theming
 
@@ -124,7 +124,7 @@ You can extend the `variants` object in the source code to define additional sty
 
 ---
 
-## 📘 Utilities
+## Utilities
 
 ### Responsive Font Size
 
@@ -132,12 +132,12 @@ The `responsiveFontSize` utility adjusts font sizes based on screen dimensions, 
 
 ---
 
-## 💬 Support
+## Support
 
-If you have any issues or suggestions, please [open an issue](https://github.com/trendui/react-native/issues) in the repository.
+If you have any issues or suggestions, please [open an issue](https://github.com/trend-ui/trendui-react-native/issues) in the repository.
 
 ---
 
-## 🛡 License
+## License
 
 This component is part of the TrendUI library and is licensed under the **MIT License**.
