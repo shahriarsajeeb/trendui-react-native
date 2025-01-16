@@ -3,11 +3,11 @@ import Link from "next/link";
 
 import { Github, Twitter } from "lucide-react";
 
-import DiscordIcon from "../../../public/discord.svg";
+import DiscordIcon from "@/assests/discord.svg";
 
 export default function Footer() {
   return (
-    <footer className="mt-20 bg-black py-8 text-white">
+    <footer className="relative z-20 mt-20 py-8 text-white">
       <div className="container mx-auto space-y-8 px-4">
         <div className="space-y-4 text-center">
           <h2 className="text-3xl font-bold md:text-5xl">Community</h2>
@@ -18,7 +18,7 @@ export default function Footer() {
 
         <div className="mt-8 flex flex-col gap-4 md:mt-12 md:flex-row md:items-stretch md:justify-between md:gap-8">
           <Link
-            href="https://x.com"
+            href="https://x.com/trenduiofficial"
             target="_blank"
             className="group flex flex-1 flex-col rounded-lg bg-zinc-900 p-4 transition-colors hover:bg-zinc-800 md:p-6"
           >
@@ -78,7 +78,7 @@ export default function Footer() {
           </Link>
 
           <Link
-            href="https://github.com"
+            href="https://github.com/trend-ui/trendui-react-native"
             target="_blank"
             className="group flex flex-1 flex-col rounded-lg bg-zinc-900 p-4 transition-colors hover:bg-zinc-800 md:p-6"
           >

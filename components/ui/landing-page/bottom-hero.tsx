@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import ReactIcon from "../../../public/react.svg";
+import ReactIcon from "@/assests/react.svg";
 
 export default function BottomHero() {
   return (

@@ -1,9 +1,11 @@
 "use client";
 
-import { cn } from "@/lib/utils";
+import { useEffect, useState } from "react";
+
 import { AnimatePresence, motion } from "framer-motion";
 import { MicOff, Phone, X } from "lucide-react";
-import { useEffect, useState } from "react";
+
+import { cn } from "@/lib/utils";
 
 const initialCallUsers = [
   {
@@ -76,10 +78,10 @@ export default function Call({ className }: { className: string }) {
           <motion.div
             layoutId={`userprofile-${user.id}`}
             className={cn(
-              "size-10 rounded-full border-4 border-white dark:border-black border-b",
+              "size-10 rounded-full border-4 border-b border-white dark:border-black",
               {
                 "-ml-3": stacked,
-              }
+              },
             )}
             style={{
               backgroundImage: `url(${user.image || "default_image.jpg"})`,
@@ -96,7 +98,7 @@ export default function Call({ className }: { className: string }) {
               </motion.h1>
               <motion.p
                 layoutId={`userrole-${user.id}`}
-                className="text-muted-foreground text-sm"
+                className="text-sm text-muted-foreground"
               >
                 {user.role}
               </motion.p>
@@ -107,11 +109,11 @@ export default function Call({ className }: { className: string }) {
     ));
 
   return (
-    <div className="rounded-lg  center">
+    <div className="center rounded-lg">
       <motion.div
         className={cn(
-          "flex gap-4 flex-col cursor-pointer bg-gray-900 shadow-md text-primary-foreground p-4 tracking-tight overflow-hidden ",
-          className
+          "flex cursor-pointer flex-col gap-4 overflow-hidden bg-gray-900 p-4 tracking-tight text-primary-foreground shadow-md",
+          className,
         )}
         aria-expanded={isOpen}
         layout
@@ -133,8 +135,8 @@ export default function Call({ className }: { className: string }) {
           },
         }}
       >
-        <div className="text-muted-foreground flex items-center gap-2">
-          <motion.div className="!size-6 !min-w-6 rounded-full bg-green-500 center">
+        <div className="flex items-center gap-2 text-muted-foreground">
+          <motion.div className="center !size-6 !min-w-6 rounded-full bg-green-500">
             <Phone size={12} fill="white" strokeWidth={0} />
           </motion.div>
           <motion.span className="text-white">
@@ -163,7 +165,7 @@ export default function Call({ className }: { className: string }) {
           <div className="flex flex-col gap-2">
             <motion.h1
               layoutId="call-company"
-              className="font-bold text-gray-50 text-2xl"
+              className="text-2xl font-bold text-gray-50"
             >
               Skale call
             </motion.h1>
@@ -189,16 +191,16 @@ export default function Call({ className }: { className: string }) {
                 <motion.button
                   layout
                   //   onClick={() => setStatus("idle")}
-                  className="size-6 flex items-center justify-center rounded-full bg-muted"
+                  className="flex size-6 items-center justify-center rounded-full bg-muted"
                 >
-                  <X className="size-4 text-tight text-secondary-foreground" />
+                  <X className="text-tight size-4 text-secondary-foreground" />
                 </motion.button>
                 <motion.button
                   layout
                   //   onClick={() => setStatus("idle")}
-                  className="size-6 flex items-center justify-center rounded-full bg-muted"
+                  className="flex size-6 items-center justify-center rounded-full bg-muted"
                 >
-                  <MicOff className="size-4 text-tight text-secondary-foreground" />
+                  <MicOff className="text-tight size-4 text-secondary-foreground" />
                 </motion.button>
               </motion.div>
             )}

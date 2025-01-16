@@ -52,7 +52,7 @@ const features = [
       "Written in TypeScript with full type definitions for all components and props.",
     icon: Star,
     bgColor: "bg-[#49031d]",
-    valueColor: "text-[#db1d8b]",
+    valueColor: "text-[#eb3ca1]",
     iconColor: "text-pink-400",
   },
 ];
@@ -64,7 +64,7 @@ export default function Features() {
         {features.map((feat, index) => (
           <div
             key={index}
-            className={`${feat.bgColor} cursor-pointer h-32 rounded-2xl p-4 shadow-lg transition-transform`}
+            className={`${feat.bgColor} mb-2 h-32 cursor-pointer rounded-2xl p-4 shadow-lg transition-transform`}
             style={{
               backgroundImage:
                 "linear-gradient(#ffffff36 1px, transparent 1px), linear-gradient(to right, #ffffff36 1px, transparent 1px)",

@@ -1,6 +1,6 @@
 "use client";
+import mesh from "@/assests/mesh.svg";
 import Image from "next/image";
-import mesh from "../../../public/mesh.svg";
 
 export default function Background() {
   return (

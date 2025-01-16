@@ -13,7 +13,7 @@ export const NavItems: NavItemsType[] = [
   },
   {
     title: "Blog",
-    href: "/",
+    href: "/blogs",
   },
   {
     title: "Roadmap",
@@ -21,4 +21,5 @@ export const NavItems: NavItemsType[] = [
   },
 ];
 
+export const sideBarRightActive = atom<string | null>(null);
 export const sideBarActive = atom<string>("/docs/introduction");

@@ -1,6 +1,8 @@
-import "@/app/globals.css";
-import { Analytics } from "@vercel/analytics/next";
 import { Inter } from "next/font/google";
+
+import { Analytics } from "@vercel/analytics/next";
+
+import "@/app/globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -27,17 +29,14 @@ export default function RootLayout({
         <meta name="description" content={metadata.description} />
         <meta name="keywords" content={metadata.keywords} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-        />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
           rel="stylesheet"
         />
         <link rel="icon" type="image/png" href="/favicon.png" />
       </head>
-      <body className={`${inter.className}  mx-auto`}>
+      <body className={`${inter.className} mx-auto`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
           <Analytics />

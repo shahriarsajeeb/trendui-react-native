@@ -2,9 +2,8 @@ import Image from "next/image";
 
 import { motion } from "framer-motion";
 
+import VR from "@/assests/vr.jpg";
 import { cn } from "@/lib/utils";
-
-import VR from "../../../public/vr.jpg";
 
 export default function ProductCard({ className }: { className: string }) {
   return (

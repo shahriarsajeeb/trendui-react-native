@@ -1,7 +1,7 @@
 import { Markdown } from "@/components/Markdown";
 import { fetchMarkdown } from "@/lib/utils";
 
-const page = async ({ params }: { params: { component: string } }) => {
+const page = async ({ params }: { params: any }) => {
   const markdown = await fetchMarkdown(
     `/src/components/${params.component}/README.md`
   );

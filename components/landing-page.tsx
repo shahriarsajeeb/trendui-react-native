@@ -7,23 +7,29 @@ import { motion } from "framer-motion";
 import { Copy } from "lucide-react";
 
 import Header from "./header/header";
+import AvatarCircles from "./ui/landing-page/avatars";
 import BottomHero from "./ui/landing-page/bottom-hero";
+import Call from "./ui/landing-page/call";
+import Counter from "./ui/landing-page/counter";
 import FeatureDescription from "./ui/landing-page/feature-description";
 import Features from "./ui/landing-page/feature-section";
 import Footer from "./ui/landing-page/footer";
+import Liquid from "./ui/landing-page/liquid-buttons";
+import LoadingButton from "./ui/landing-page/loading-button";
+import Notch from "./ui/landing-page/notch";
+import NotificationBell from "./ui/landing-page/notification-bell";
+import Pagination from "./ui/landing-page/pagination";
+import ProductCard from "./ui/landing-page/product-card";
+import { AnimatedCircularProgressBar } from "./ui/landing-page/progress";
+import TooggleSwitch from "./ui/landing-page/toggle-switch";
 
 export function LandingPage() {
-  const [isChecked, setIsChecked] = useState(true);
   const [copied, setCopied] = useState(false);
-
-  const handleCheckboxChange = () => {
-    setIsChecked(!isChecked);
-  };
 
   const handleCopy = () => {
     navigator.clipboard.writeText("npm i @trendui/react-native");
     setCopied(true);
-    setTimeout(() => setCopied(false), 2000); 
+    setTimeout(() => setCopied(false), 2000);
   };
   return (
     <div className="landing-background relative min-h-screen bg-black text-white">
@@ -37,16 +43,16 @@ export function LandingPage() {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mb-6 inline text-5xl text-[clamp(1rem,10vw,2rem)] font-bold tracking-tight sm:text-[clamp(1rem,10vw,3rem)] lg:text-5xl"
+            className="mb-6 inline text-5xl text-[clamp(1rem,10vw,2rem)] font-bold !leading-[4rem] tracking-tight sm:text-[clamp(1rem,10vw,3rem)] lg:text-5xl"
           >
             <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
               Modern
             </span>
             ,
-            <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text px-2 text-transparent">
               Lightweight
-            </span>{" "}
-            UI library for React Native
+            </span>
+            UI library <br /> for React Native
           </motion.h1>
           <p className="mb-8 text-xl text-zinc-400">
             Supports both Tailwind CSS and traditional Stylesheets.
@@ -70,7 +76,22 @@ export function LandingPage() {
         </div>
 
         {/* Floating UI Elements */}
-       
+        <div className="relative hidden flex-1 md:block">
+          <AnimatedCircularProgressBar className="absolute left-32 top-0" />
+          <div className="right-0 flex justify-end gap-4">
+            <LoadingButton className="" />
+            <NotificationBell className="" />
+            <TooggleSwitch className="" />
+          </div>
+
+          <Call className="absolute right-0 top-[350px]" />
+          <ProductCard className="absolute left-1/2 top-[130px]" />
+          <AvatarCircles className="absolute right-0 top-[130px]" />
+          <Pagination className="absolute right-[-60px] top-[200px]" />
+          <Counter className="absolute right-6 top-[265px]" />
+          <Liquid className="absolute left-0 top-[220px]" />
+          <Notch className="absolute left-[-50px] top-[350px]" />
+        </div>
       </main>
 
       {/* featuer section */}
@@ -151,7 +172,7 @@ export function LandingPage() {
       <Footer />
 
       {/* Background Gradient */}
-      <div className="absolute inset-x-0 bottom-0 h-[30vh] bg-gradient-to-t from-purple-500/20 to-transparent"></div>
+      <div className="absolute inset-x-0 bottom-0 z-10 h-[30vh] bg-gradient-to-t from-purple-500/20 to-transparent"></div>
     </div>
   );
 }

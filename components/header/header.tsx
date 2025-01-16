@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 
 import {
+  ChevronRight,
   Component,
   FileText,
   Github,
@@ -15,24 +16,59 @@ import {
 
 import Navbar from "./navbar";
 
-const Header = () => {
-  const [stars, setStars] = useState(null);
+export default function Header() {
+  const [open, setOpen] = useState(false);
+  const [stars, setStars] = useState<number | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [componentsData, setComponentsData] = useState<{ name: string }[]>([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
+    // 1) Fetch the star count
     fetch("https://api.github.com/repos/trend-ui/trendui-react-native")
       .then((response) => response.json())
       .then((data) => setStars(data.stargazers_count))
       .catch((error) => console.error("Error fetching repo data:", error));
   }, []);
 
+  useEffect(() => {
+    // 2) Fetch the list of components
+    getComponentsData();
+  }, []);
+
+  async function getComponentsData() {
+    const repoOwner = "trend-ui";
+    const repoName = "trendui-react-native";
+    const path = "src/components";
+    const url = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${path}`;
+
+    try {
+      const res = await fetch(url);
+      if (!res.ok) {
+        throw new Error(`Failed to fetch component list: ${res.statusText}`);
+      }
+      const data = await res.json();
+      // Filter for directories only, map to name
+      const components = data
+        .filter((item: any) => item.type === "dir")
+        .map((folder: any) => ({ name: folder.name }));
+      setComponentsData(components);
+    } catch (error) {
+      console.error("Error fetching component list:", error);
+    }
+  }
+
   const handleOpenMenu = () => {
     setMobileMenuOpen(true);
   };
-
   const handleCloseMenu = () => {
     setMobileMenuOpen(false);
   };
+
+  // 3) Filter components based on searchTerm (case-insensitive)
+  const filteredComponents = componentsData.filter((comp) =>
+    comp.name.toLowerCase().includes(searchTerm.toLowerCase()),
+  );
 
   return (
     <header className="fixed left-0 top-0 z-50 w-full bg-transparent px-4 pt-2 backdrop-blur-xl">
@@ -73,18 +109,21 @@ const Header = () => {
               <Navbar />
             </div>
 
-            <div className="flex items-center gap-2 rounded-full bg-zinc-900 px-3 py-1.5">
+            {/* Search trigger */}
+            <div
+              className="flex cursor-pointer items-center gap-2 rounded-full bg-zinc-900 px-3 py-1.5"
+              onClick={() => setOpen(true)}
+            >
               <Search className="size-4 text-zinc-400" />
-              <input
-                type="search"
-                placeholder="Search"
-                className="hidden border-none bg-transparent text-zinc-400 outline-none focus:border-none focus:outline-none md:block"
-              />
+              <div className="hidden min-w-16 border-none bg-transparent text-zinc-400 outline-none focus:border-none focus:outline-none md:block">
+                Search
+              </div>
               <kbd className="hidden rounded bg-zinc-800 px-1.5 text-xs md:block">
                 ⌘K
               </kbd>
             </div>
 
+            {/* GitHub link + star count */}
             <Link
               href="https://github.com/trend-ui/trendui-react-native"
               className="flex items-center gap-1 rounded-full bg-zinc-900 px-3 py-1.5 text-zinc-400 hover:text-white"
@@ -95,6 +134,7 @@ const Header = () => {
               <span className="text-sm">{stars}</span>
             </Link>
 
+            {/* Mobile Menu Toggle */}
             {!mobileMenuOpen && (
               <button
                 onClick={handleOpenMenu}
@@ -118,9 +158,7 @@ const Header = () => {
 
       {/* Mobile menu sidebar */}
       <div
-        className={`fixed inset-y-0 right-0 z-[60] h-screen w-screen bg-black p-6 backdrop-blur-xl transition-transform duration-300 ease-in-out md:hidden ${
-          mobileMenuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`fixed inset-y-0 right-0 z-[60] h-screen w-screen bg-black p-6 backdrop-blur-xl transition-transform duration-300 ease-in-out md:hidden ${mobileMenuOpen ? "translate-x-0" : "translate-x-full"}`}
       >
         <div className="flex flex-col space-y-2">
           <div className="flex justify-end">
@@ -161,8 +199,62 @@ const Header = () => {
           </div>
         </div>
       </div>
+
+      {/* Search Modal */}
+      {open && (
+        <div
+          className="fixed inset-0 z-[999999] flex h-screen items-center justify-center bg-black/70 p-4"
+          onClick={(e) => {
+            // If user clicks the backdrop (not the child), close
+            if (e.target === e.currentTarget) {
+              setOpen(false);
+            }
+          }}
+        >
+          <div className="relative w-full max-w-lg rounded-lg bg-zinc-900 text-sm text-white shadow-lg">
+            {/* Search Header */}
+            <div className="border-b border-zinc-800 px-4 py-3">
+              <input
+                type="text"
+                value={searchTerm}
+                onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                  setSearchTerm(e.target.value)
+                }
+                placeholder="Search components"
+                className="w-full rounded-md bg-zinc-800 p-3 text-[16px] text-zinc-100 placeholder:text-zinc-500 focus:outline-none"
+              />
+            </div>
+
+            {/* Components List */}
+            <div className="px-4 py-3">
+              <ul className="space-y-1">
+                {filteredComponents.length > 0 ? (
+                  filteredComponents.map((component) => (
+                    <li key={component.name}>
+                      <Link
+                        href={`/docs/components/${component.name}`}
+                        onClick={() => setOpen(false)} // close modal on select
+                        className="flex w-full items-center justify-between rounded-md px-3 py-2 text-left hover:bg-zinc-800"
+                      >
+                        <span className="text-sm text-zinc-200">
+                          {component.name}
+                        </span>
+                        <ChevronRight className="size-4 text-zinc-500" />
+                      </Link>
+                    </li>
+                  ))
+                ) : (
+                  <li>
+                    <div className="px-3 py-2 text-center text-xs text-zinc-400">
+                      No components found
+                    </div>
+                  </li>
+                )}
+              </ul>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
-};
-
-export default Header;
+}

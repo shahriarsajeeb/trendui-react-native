@@ -1,52 +1,132 @@
 "use client";
 
-import { Clipboard, ClipboardCheck } from "lucide-react";
 import Link from "next/link";
-import { memo, useState } from "react";
+import { Children, ReactNode, memo, useEffect, useState } from "react";
+
+import { Clipboard, ClipboardCheck } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+
+import useActiveHeading from "@/hooks/useActiveHeading";
+
 import { Button } from "./ui/button";
 
+function getHeadingText(children: ReactNode): string {
+  // Flatten child nodes, pick out only string bits
+  const textBits = Children.map(children, (child) =>
+    typeof child === "string" ? child : "",
+  );
+  // Join all string bits together
+  return (textBits || []).join("").trim();
+}
+
+function slugify(text: string) {
+  return text
+    ?.toLowerCase()
+    ?.replace(/[^\w\s-]/g, "")
+    ?.trim()
+    ?.replace(/\s+/g, "-");
+}
+
 const NonMemoizedMarkdown = ({ children }: { children: string }) => {
-  const [isCopied,setIsCopied] = useState(false)
+  const { activeSection, setActiveSection } = useActiveHeading();
+
+  useEffect(() => {
+    function handleScroll() {
+      const headings = document.querySelectorAll<HTMLHeadingElement>("h2[id]");
+  
+      // Keep track of the last heading that’s above our threshold
+      let lastInView: string | null = null;
+  
+      for (let i = 0; i < headings.length; i++) {
+        const heading = headings[i];
+        const rect = heading.getBoundingClientRect();
+        // If top < 150, consider it "in view" for our purposes
+        if (rect.top < 120) {
+          lastInView = heading.id;
+        } else {
+          // As soon as we find a heading that isn't in that range,
+          // we can stop checking further headings
+          break;
+        }
+      }
+  
+      // If we found any heading, use the last one. Otherwise fallback to the old active.
+      let newActive = lastInView ?? activeSection;
+  
+      // If still no heading is in view and we have none active, pick the first heading
+      if (!newActive && headings.length > 0 && !activeSection) {
+        newActive = headings[0].id;
+      }
+  
+      if (newActive !== activeSection) {
+        setActiveSection(newActive);
+      }
+    }
+  
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // run once on mount
+  
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [activeSection]);
+  
+  const [isCopied, setIsCopied] = useState(false);
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text).then(() => {
-      setIsCopied(true)
+      setIsCopied(true);
     });
 
-    setTimeout(()=>{
-      setIsCopied(false)
-    },2500)
+    setTimeout(() => {
+      setIsCopied(false);
+    }, 2500);
   };
 
   const components = {
-    h1: ({ children, ...props }: any) => (
-      <h1
-        className="md:text-3xl font-bold mb-4 mt-6 text-neutral-800 dark:text-neutral-100 border-b border-neutral-300 dark:border-neutral-700 pb-2"
-        {...props}
-      >
-        {children}
-      </h1>
-    ),
-    h2: ({ children, ...props }: any) => (
-      <h2
-        className="md:text-2xl font-semibold mb-3 mt-5 text-neutral-800 dark:text-neutral-200"
-        {...props}
-      >
-        {children}
-      </h2>
-    ),
-    h3: ({ children, ...props }: any) => (
-      <h3
-        className="text-sm md:text-xl font-medium mb-2 mt-4 text-neutral-800 dark:text-neutral-200"
-        {...props}
-      >
-        {children}
-      </h3>
-    ),
+    h1: ({ children, ...props }: any) => {
+      const headingText = getHeadingText(children);
+      const slug = slugify(headingText);
+
+      return (
+        <h1
+          id={slug}
+          className="mb-4 mt-6 border-b border-neutral-300 pb-2 font-bold text-neutral-800 dark:border-neutral-700 dark:text-neutral-100 md:text-3xl"
+          {...props}
+        >
+          {children}
+        </h1>
+      );
+    },
+    h2: ({ children, ...props }: any) => {
+      const headingText = getHeadingText(children);
+      const slug = slugify(headingText);
+      return (
+        <h2
+          id={slug}
+          className="mb-3 mt-5 font-semibold text-neutral-800 dark:text-neutral-200 md:text-2xl"
+          {...props}
+        >
+          {children}
+        </h2>
+      );
+    },
+    h3: ({ children, ...props }: any) => {
+      const headingText = getHeadingText(children);
+      const slug = slugify(headingText);
+      return (
+        <h3
+          id={slug}
+          className="mb-2 mt-4 text-sm font-medium text-neutral-800 dark:text-neutral-200 md:text-xl"
+          {...props}
+        >
+          {children}
+        </h3>
+      );
+    },
     p: ({ children, ...props }: any) => (
       <p
-        className="text-[9px] md:text-base max-w-prose leading-6 mb-4 text-neutral-700 dark:text-neutral-300"
+        className="mb-4 max-w-prose text-[9px] leading-6 text-neutral-700 dark:text-neutral-300 md:text-base"
         {...props}
       >
         {children}
@@ -57,23 +137,23 @@ const NonMemoizedMarkdown = ({ children }: { children: string }) => {
       const codeContent = String(children).trim();
 
       return !inline && match ? (
-        <div className="relative group">
+        <div className="group relative">
           <pre
             {...props}
-            className={`${className} text-[9px] max-w-prose md:text-sm w-[90%] md:max-w-full overflow-x-auto bg-zinc-100 p-4 rounded-lg mt-3 dark:bg-[#18181B]`}
+            className={`${className} mt-3 w-[90%] max-w-prose overflow-x-auto rounded-lg bg-zinc-100 p-4 text-[9px] dark:bg-[#18181B] md:max-w-full md:text-sm`}
           >
             <code className={match[1]}>{children}</code>
           </pre>
           <Button
             onClick={() => copyToClipboard(codeContent)}
-            className="absolute top-2 right-2 dark:bg-neutral-800 dark:text-white text-xs md:text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity"
+            className="absolute right-2 top-2 rounded px-2 py-1 text-xs opacity-0 transition-opacity group-hover:opacity-100 dark:bg-neutral-800 dark:text-white md:text-sm"
           >
-            {!isCopied ? (<Clipboard />):(<ClipboardCheck />)}
+            {!isCopied ? <Clipboard /> : <ClipboardCheck />}
           </Button>
         </div>
       ) : (
         <code
-          className={`${className} text-xs md:text-sm bg-zinc-100 dark:bg-zinc-800 py-0.5 px-1 rounded-md`}
+          className={`${className} rounded-md bg-zinc-100 px-1 py-0.5 text-xs dark:bg-zinc-800 md:text-sm`}
           {...props}
         >
           {children}
@@ -82,7 +162,7 @@ const NonMemoizedMarkdown = ({ children }: { children: string }) => {
     },
     ol: ({ children, ...props }: any) => (
       <ol
-        className="text-xs md:text-base list-decimal list-outside ml-6 mb-4 text-neutral-700 dark:text-neutral-300"
+        className="mb-4 ml-6 list-outside list-decimal text-xs text-neutral-700 dark:text-neutral-300 md:text-base"
         {...props}
       >
         {children}
@@ -90,7 +170,7 @@ const NonMemoizedMarkdown = ({ children }: { children: string }) => {
     ),
     ul: ({ children, ...props }: any) => (
       <ul
-        className="list-disc list-outside ml-6 mb-4 text-neutral-700 dark:text-neutral-300"
+        className="mb-4 ml-6 list-outside list-disc text-neutral-700 dark:text-neutral-300"
         {...props}
       >
         {children}
@@ -103,7 +183,7 @@ const NonMemoizedMarkdown = ({ children }: { children: string }) => {
     ),
     blockquote: ({ children, ...props }: any) => (
       <blockquote
-        className="border-l-4 border-neutral-300 dark:border-neutral-700 pl-4 italic text-neutral-600 dark:text-neutral-400 mb-4"
+        className="mb-4 border-l-4 border-neutral-300 pl-4 italic text-neutral-600 dark:border-neutral-700 dark:text-neutral-400"
         {...props}
       >
         {children}
@@ -126,13 +206,13 @@ const NonMemoizedMarkdown = ({ children }: { children: string }) => {
     ),
     hr: ({ ...props }: any) => (
       <hr
-        className="border-t border-neutral-300 dark:border-neutral-700 my-6"
+        className="my-6 border-t border-neutral-300 dark:border-neutral-700"
         {...props}
       />
     ),
     table: ({ children, ...props }: any) => (
       <table
-        className="table-auto border-collapse border border-neutral-300 dark:border-neutral-700 w-full text-left mb-4"
+        className="mb-4 w-full table-auto border-collapse border border-neutral-300 text-left dark:border-neutral-700"
         {...props}
       >
         {children}
@@ -140,7 +220,7 @@ const NonMemoizedMarkdown = ({ children }: { children: string }) => {
     ),
     th: ({ children, ...props }: any) => (
       <th
-        className="border border-neutral-300 dark:border-neutral-700 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 font-semibold"
+        className="border border-neutral-300 bg-neutral-100 px-4 py-2 font-semibold dark:border-neutral-700 dark:bg-neutral-800"
         {...props}
       >
         {children}
@@ -148,7 +228,7 @@ const NonMemoizedMarkdown = ({ children }: { children: string }) => {
     ),
     td: ({ children, ...props }: any) => (
       <td
-        className="border border-neutral-300 dark:border-neutral-700 px-4 py-2"
+        className="border border-neutral-300 px-4 py-2 dark:border-neutral-700"
         {...props}
       >
         {children}
@@ -165,5 +245,5 @@ const NonMemoizedMarkdown = ({ children }: { children: string }) => {
 
 export const Markdown = memo(
   NonMemoizedMarkdown,
-  (prevProps, nextProps) => prevProps.children === nextProps.children
+  (prevProps, nextProps) => prevProps.children === nextProps.children,
 );

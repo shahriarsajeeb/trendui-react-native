@@ -1,6 +1,6 @@
-import { clsx, type ClassValue } from "clsx";
-import { twMerge } from "tailwind-merge";
+import { type ClassValue, clsx } from "clsx";
 import { Clock, Globe, Network, Type, Variable, Wand2 } from "lucide-react";
+import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -17,7 +17,7 @@ export async function getMarkdownContent(file: string) {
   for (const variation of variations) {
     try {
       const res = await fetch(
-        `https://raw.githubusercontent.com/trend-ui/trendui-react-native/master/${variation}`
+        `https://raw.githubusercontent.com/trend-ui/trendui-react-native/master/${variation}`,
       );
 
       if (res.ok) {
@@ -29,10 +29,35 @@ export async function getMarkdownContent(file: string) {
   }
 
   throw new Error(
-    "Failed to fetch Markdown: File not found in any of the variations."
+    "Failed to fetch Markdown: File not found in any of the variations.",
   );
 }
 
+function extractAllSections(markdown: string) {
+  const sectionRegex = /^##\s+(.*)\r?\n([\s\S]*?)(?=\n##\s+|$)/gm;
+  const sections: Array<{ heading: string; content: string }> = [];
+  let match: RegExpExecArray | null;
+
+  while ((match = sectionRegex.exec(markdown)) !== null) {
+    // match[1] is the heading text, match[2] is everything until the next heading
+    const headingText = match[1].trim();
+    const content = match[2].trim();
+
+    sections.push({ heading: headingText, content });
+  }
+
+  return sections;
+}
+
+export async function fetchSectionFromMarkdown(file: string) {
+  try {
+    const markdown = await getMarkdownContent(file);
+    return extractAllSections(markdown);
+  } catch (error) {
+    console.error("Failed to fetch or parse markdown:", error);
+    return "Error fetching or parsing content. Please try again later.";
+  }
+}
 
 export async function fetchMarkdown(file: string) {
   try {
@@ -43,7 +68,6 @@ export async function fetchMarkdown(file: string) {
     return "Error fetching content. Please try again later.";
   }
 }
-
 
 export const features = [
   {
