@@ -84,8 +84,7 @@ const Skeleton = () => {
 
   useEffect(() => {
     animate(sequence, {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-expect-error
+      // @ts-ignore
       repeat: Infinity,
       repeatDelay: 1,
     });
