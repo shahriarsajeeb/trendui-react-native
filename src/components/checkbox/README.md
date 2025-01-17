@@ -2,7 +2,7 @@
 
 The `Checkbox` component is a versatile, customizable, and user-friendly React Native component for creating interactive checkboxes. It supports animations, labels, and a variety of styles to fit your application's needs.
 
----
+![Checkbox Demo](https://res.cloudinary.com/dvuldqqyp/image/upload/v1737090976/Untitled_design_hgzqbt.gif)
 
 ## Installation
 ```bash
@@ -140,7 +140,12 @@ The `Checkbox` component supports both inline styles via the `customStyles` prop
 ```
 
 ---
+## Support
+
+If you have any issues or suggestions, please [open an issue](https://github.com/trend-ui/trendui-react-native/issues) in the repository.
+
+---
 
 ## License
 
-This component is open-source and available under the MIT license. Enjoy using it in your projects! 😊
+This component is part of the TrendUI library and is licensed under the **MIT License**.
