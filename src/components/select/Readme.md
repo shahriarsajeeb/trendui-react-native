@@ -2,7 +2,7 @@
 
 The `Select` component is a flexible and customizable dropdown component designed for React Native applications. It supports themes, TailwindCSS integration, and dynamic styling for a seamless user experience.
 
----
+![Image Demo](https://res.cloudinary.com/dvuldqqyp/image/upload/v1737092894/Untitled_design_irkfe3.gif)
 
 ## Installation
 ```bash
