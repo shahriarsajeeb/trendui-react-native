@@ -21,11 +21,13 @@ Follow these steps to set up **TrendUI** in your React Native project.
 Install the library and required peer dependencies:
 
 **Using npm**:
+
 ```bash
 npm install @trendui/react-native --save
 ```
 
 **Using yarn**:
+
 ```bash
 yarn add @trendui/react-native
 ```
@@ -43,11 +45,13 @@ npm link
 #### Use the CLI Commands:
 
 - **Initialize** TrendUI in your project:
+
   ```bash
   npx trendui init
   ```
 
 - **Add Specific Components**:
+
   ```bash
   npx trendui add button textinput
   ```
@@ -63,15 +67,21 @@ npm link
 
 TrendUI comes with a variety of prebuilt components:
 
-| Component   | Description                              |
-|-------------|------------------------------------------|
-| `Button`    | A customizable button component          |
-| `TextInput` | A flexible input field for user text     |
-| `Image`     | An image component with animation loader |
-| `Text`      | Styled text component with themes        |
-| `Select`    | Dropdown component for selections        |
+| Component   | Description                                 |
+| ----------- | ------------------------------------------- |
+| `Button`    | A customizable button component             |
+| `TextInput` | A flexible input field for user text        |
+| `Image`     | An image component with animation loader    |
+| `Text`      | Styled text component with themes           |
+| `Select`    | Dropdown component for selections           |
+| `Accordion` | Accordion component for collapsible items   |
+| `Avatar`    | Avatar component for with mutiple variants  |
+| `Badge`     | Badge component with multiple styling       |
+| `Tabs`      | Tabs component with multiple select options |
+| `Card`      | Card component with multiple customization  |
+| `Checkbox`  | Checkbox component with conditional support |
 
---- 
+---
 
 ## 🔧 Configuration
 
@@ -87,8 +97,8 @@ module.exports = {
 
 ## 📘 Available CLI Commands
 
-| Command                  | Description                              |
-|--------------------------|------------------------------------------|
+| Command                  | Description                             |
+| ------------------------ | --------------------------------------- |
 | `npx trendui init`       | Initialize TrendUI in your project      |
 | `npx trendui add <name>` | Add specific components to your project |
 | `npx trendui list`       | List all available components           |
@@ -115,7 +125,7 @@ After installing components, your project structure will look like this:
 The `index.tsx` file will auto-export all components, allowing you to import components seamlessly:
 
 ```tsx
-import { Button, TextInput } from '@/trendui';
+import { Button, TextInput } from "@/trendui";
 ```
 
 ---

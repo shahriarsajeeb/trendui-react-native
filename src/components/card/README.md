@@ -2,7 +2,7 @@
 
 The **Card** component is a versatile and customizable component for displaying content, supporting themes, background images, overlays, and content styling.
 
----
+![Card Demo](https://res.cloudinary.com/dvuldqqyp/image/upload/v1737089516/Untitled_design_t6jpj3.gif)
 
 ## Installation
 ```bash
@@ -121,9 +121,12 @@ export default App;
 ```
 
 ---
+## Support
+
+If you have any issues or suggestions, please [open an issue](https://github.com/trend-ui/trendui-react-native/issues) in the repository.
+
+---
 
 ## License
 
-This component is open-source and free to use in any project.
-
----
+This component is part of the TrendUI library and is licensed under the **MIT License**.
