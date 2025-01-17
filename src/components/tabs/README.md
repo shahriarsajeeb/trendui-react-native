@@ -2,7 +2,7 @@
 
 A flexible and reusable tabbed navigation component for React Native. Supports light and dark themes, custom animations, and highly customizable styles and classNames.
 
----
+![Tabs Demo](https://res.cloudinary.com/dvuldqqyp/image/upload/v1737093929/Untitled_design_1_umhciw.gif)
 
 ## Installation
 
@@ -141,10 +141,12 @@ Enable or disable animations using the `enableAnimation` prop.
 <Tabs tabs={tabs} enableAnimation={false} />
 ```
 
-## License
+## Support
 
-This project is licensed under the MIT License.
+If you encounter any issues or have suggestions, please [open an issue](https://github.com/trend-ui/trendui-react-native/issues) on the repository.
 
 ---
 
-Enjoy using the Tabs component! Contributions and feedback are welcome.
+## License
+
+This component is licensed under the **MIT License** as part of the TrendUI library.
