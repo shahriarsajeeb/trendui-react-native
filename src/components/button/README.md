@@ -2,7 +2,7 @@
 
 The `Button` component is a versatile and customizable button element designed for React Native applications. It supports multiple styles, loading states, and TailwindCSS integration, providing an intuitive and developer-friendly solution for creating interactive buttons.
 
----
+![Accordion Demo](https://res.cloudinary.com/dvuldqqyp/image/upload/v1737087530/button_nrd2l7.gif)
 
 ## Installation
 ```bash
