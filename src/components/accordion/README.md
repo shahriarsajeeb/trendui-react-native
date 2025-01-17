@@ -2,12 +2,16 @@
 
 A reusable, customizable, and lightweight Accordion component for React Native with support for light and dark themes. This component allows you to create collapsible sections with ease.
 
+![Accordion Demo](https://res.cloudinary.com/dvuldqqyp/image/upload/v1737086438/final_d3n5rf.gif)
+
 ---
 
 ## Installation
+
 ```bash
 npx trendui add accordion
 ```
+
 ---
 
 ## Features
@@ -26,13 +30,24 @@ Here’s how you can use the Accordion component in your project:
 ```tsx
 import React from "react";
 import { View } from "react-native";
-import Accordion from "@/trendui";
+import { Accordion } from "@/trendui";
 
 const App = () => {
   const sections = [
-    { title: "Is it accessible?", content: "Yes. It adheres to the WAI-ARIA design pattern." },
-    { title: "Is it styled?", content: "Yes. It comes with default styles that match other components' aesthetic." },
-    { title: "Is it animated?", content: "Yes. It's animated by default, but you can disable it if you prefer." },
+    {
+      title: "Is it accessible?",
+      content: "Yes. It adheres to the WAI-ARIA design pattern.",
+    },
+    {
+      title: "Is it styled?",
+      content:
+        "Yes. It comes with default styles that match other components' aesthetic.",
+    },
+    {
+      title: "Is it animated?",
+      content:
+        "Yes. It's animated by default, but you can disable it if you prefer.",
+    },
   ];
 
   return (
@@ -51,18 +66,18 @@ export default App;
 
 ### Required Props
 
-| Prop       | Type                                              | Description                                           |
-|------------|---------------------------------------------------|-------------------------------------------------------|
-| `sections` | `Array<{ title: string; content: string; }>`      | Array of objects containing the title and content for each accordion section. |
+| Prop       | Type                                         | Description                                                                   |
+| ---------- | -------------------------------------------- | ----------------------------------------------------------------------------- |
+| `sections` | `Array<{ title: string; content: string; }>` | Array of objects containing the title and content for each accordion section. |
 
 ### Optional Props
 
-| Prop           | Type                | Default     | Description                                                                                           |
-|----------------|---------------------|-------------|-------------------------------------------------------------------------------------------------------|
-| `style`        | `ViewStyle`         | `undefined` | Custom styles for the overall container.                                                             |
-| `className`    | `string`            | `undefined` | Tailwind CSS classes for the overall container.                                                      |
-| `theme`        | `"light" | "dark"` | `"light"`   | Sets the theme of the Accordion component.                                                           |
-| `customStyles` | `Object`            | `{}`        | Custom styles for specific parts of the Accordion, such as `container`, `section`, `trigger`, etc.    |
+| Prop           | Type        | Default     | Description                                                                                        |
+| -------------- | ----------- | ----------- | -------------------------------------------------------------------------------------------------- | ------------------------------------------ |
+| `style`        | `ViewStyle` | `undefined` | Custom styles for the overall container.                                                           |
+| `className`    | `string`    | `undefined` | Tailwind CSS classes for the overall container.                                                    |
+| `theme`        | `"light"    | "dark"`     | `"light"`                                                                                          | Sets the theme of the Accordion component. |
+| `customStyles` | `Object`    | `{}`        | Custom styles for specific parts of the Accordion, such as `container`, `section`, `trigger`, etc. |
 
 ---
 
@@ -72,16 +87,16 @@ You can customize the component using the `customStyles` prop, which allows you 
 
 ### `customStyles` Object
 
-| Key             | Type        | Description                                             |
-|------------------|-------------|---------------------------------------------------------|
-| `container`      | `ViewStyle` | Custom style for the overall container.                |
-| `section`        | `ViewStyle` | Custom style for each section of the Accordion.        |
-| `trigger`        | `ViewStyle` | Custom style for the header of each section.           |
-| `triggerActive`  | `ViewStyle` | Custom style for the active header of a section.       |
-| `content`        | `ViewStyle` | Custom style for the content area of each section.     |
-| `title`          | `TextStyle` | Custom style for the title text in the header.         |
-| `titleActive`    | `TextStyle` | Custom style for the title text in an active section.  |
-| `contentText`    | `TextStyle` | Custom style for the text inside the content area.     |
+| Key             | Type        | Description                                           |
+| --------------- | ----------- | ----------------------------------------------------- |
+| `container`     | `ViewStyle` | Custom style for the overall container.               |
+| `section`       | `ViewStyle` | Custom style for each section of the Accordion.       |
+| `trigger`       | `ViewStyle` | Custom style for the header of each section.          |
+| `triggerActive` | `ViewStyle` | Custom style for the active header of a section.      |
+| `content`       | `ViewStyle` | Custom style for the content area of each section.    |
+| `title`         | `TextStyle` | Custom style for the title text in the header.        |
+| `titleActive`   | `TextStyle` | Custom style for the title text in an active section. |
+| `contentText`   | `TextStyle` | Custom style for the text inside the content area.    |
 
 Example of using `customStyles`:
 
@@ -128,9 +143,11 @@ This component is open-source and available under the MIT License.
 ## Example Preview
 
 ### Light Theme:
+
 <img src="./light-theme-preview.png" alt="Light Theme Preview" width="300" />
 
 ### Dark Theme:
+
 <img src="./dark-theme-preview.png" alt="Dark Theme Preview" width="300" />
 
 ---
