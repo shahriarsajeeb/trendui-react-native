@@ -2,14 +2,15 @@
 
 The `Text` component is a highly customizable and responsive text element designed for React Native applications. It supports theming, TailwindCSS classes, and responsive font sizes to provide a seamless and scalable typography solution.
 
+![Text Demo](https://res.cloudinary.com/dvuldqqyp/image/upload/v1737094758/Untitled_design_ggvxja.gif)
 
 ---
 
 ## Installation
+
 ```bash
 npx trendui add text
 ```
----
 
 ## Features
 
@@ -22,15 +23,15 @@ npx trendui add text
 
 ## Props
 
-| Prop        | Type                                                                         | Default  | Description                                                                                       |
-|-------------|------------------------------------------------------------------------------|----------|---------------------------------------------------------------------------------------------------|
-| `value`     | `string`                                                                     | -        | The text to display.                                                                              |
-| `size`      | `"lg"`, `"xl"`, `"2xl"`, `"3xl"`, `number`                                   | -        | Sets the font size.                                                                               |
-| `className` | `string`                                                                     | -        | TailwindCSS classes for additional styling.                                                      |
-| `variant`   | `"label"`, `"title"`, `"header"`, `"paragraph"`, `"baseText"`                | -        | Predefined styles for specific text types.                                                       |
-| `theme`     | `"light"`, `"dark"`                                                         | `"light"`| Theme mode for the text color.                                                                    |
-| `fontWeight`| `"normal"`, `"bold"`, `"100"`–`"900"`                                       | -        | Sets the font weight.                                                                             |
-| `...props`  | [React Native `TextProps`](https://reactnative.dev/docs/text#props)          | -        | Any additional props supported by React Native's `Text` component.                               |
+| Prop         | Type                                                                | Default   | Description                                                        |
+| ------------ | ------------------------------------------------------------------- | --------- | ------------------------------------------------------------------ |
+| `value`      | `string`                                                            | -         | The text to display.                                               |
+| `size`       | `"lg"`, `"xl"`, `"2xl"`, `"3xl"`, `number`                          | -         | Sets the font size.                                                |
+| `className`  | `string`                                                            | -         | TailwindCSS classes for additional styling.                        |
+| `variant`    | `"label"`, `"title"`, `"header"`, `"paragraph"`, `"baseText"`       | -         | Predefined styles for specific text types.                         |
+| `theme`      | `"light"`, `"dark"`                                                 | `"light"` | Theme mode for the text color.                                     |
+| `fontWeight` | `"normal"`, `"bold"`, `"100"`–`"900"`                               | -         | Sets the font weight.                                              |
+| `...props`   | [React Native `TextProps`](https://reactnative.dev/docs/text#props) | -         | Any additional props supported by React Native's `Text` component. |
 
 ---
 
@@ -44,7 +45,9 @@ import { Text } from "@/trendui";
 
 export default function App() {
   return (
-    <Text value="Hello, World!" size="xl" theme="dark" fontWeight="bold" />
+    <Text size="xl" theme="dark" fontWeight="bold">
+      Hello, World!
+    </Text>
   );
 }
 ```
@@ -60,10 +63,10 @@ import { Text } from "@/trendui";
 export default function App() {
   return (
     <>
-      <Text value="Label" variant="label" />
-      <Text value="Title" variant="title" />
-      <Text value="Header" variant="header" />
-      <Text value="This is a paragraph." variant="paragraph" />
+      <Text variant="label">Label</Text>
+      <Text variant="title">Title</Text>
+      <Text variant="header">Header</Text>
+      <Text variant="paragraph">This is a paragraph.</Text>
     </>
   );
 }
@@ -79,11 +82,9 @@ import { Text } from "@/trendui";
 
 export default function App() {
   return (
-    <Text
-      value="Styled Text"
-      size="lg"
-      className="text-center text-red-500"
-    />
+    <Text size="lg" className="text-center text-red-500">
+      Styled Text
+    </Text>
   );
 }
 ```
@@ -98,7 +99,9 @@ import { Text } from "@/trendui";
 
 export default function App() {
   return (
-    <Text value="Custom Size Text" size={32} fontWeight="600" />
+    <Text size={32} fontWeight="600">
+      Custom Size Text
+    </Text>
   );
 }
 ```
@@ -112,8 +115,12 @@ export default function App() {
 The `Text` component adapts to light and dark themes using the `theme` prop.
 
 ```tsx
-<Text value="Light Theme" theme="light" />
-<Text value="Dark Theme" theme="dark" />
+<Text theme="light">
+  Light Theme
+</Text>
+<Text theme="dark">
+  Dark Theme
+</Text>
 ```
 
 ---
