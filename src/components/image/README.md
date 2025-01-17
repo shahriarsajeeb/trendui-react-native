@@ -2,7 +2,7 @@
 
 The `Image` component is a highly customizable, lightweight, and animated image viewer for React Native. It includes error handling and supports TailwindCSS integration for styling.
 
----
+![Image Demo](https://res.cloudinary.com/dvuldqqyp/image/upload/v1737092005/Untitled_design_aglw74.gif)
 
 ## Installation
 
@@ -20,18 +20,17 @@ npx trendui add image
 - **Styling Options**: Supports inline styles and TailwindCSS classes.
 - **Performance-Optimized**: Leverages `Animated` for smooth transitions.
 
-
 ## Props
 
-| Prop         | Type                     | Default           | Description                                                              |
-|--------------|--------------------------|-------------------|--------------------------------------------------------------------------|
-| `src`        | `string`                 | **Required**      | URL of the image to display.                                             |
-| `alt`        | `string`                 | `"Failed to load"`| Alternative text shown if the image fails to load.                       |
-| `width`      | `number`                 | **Required**      | Desired width of the image.                                              |
-| `height`     | `number`                 | **Required**      | Desired height of the image.                                             |
-| `blurRadius` | `number`                 | `10`              | Radius of the blur effect (not yet implemented in this version).         |
-| `style`      | `StyleProp<ImageStyle>`  | `undefined`       | Additional custom styles for the image.                                  |
-| `className`  | `string`                 | `undefined`       | TailwindCSS classes for styling.                                         |
+| Prop         | Type                    | Default            | Description                                                      |
+| ------------ | ----------------------- | ------------------ | ---------------------------------------------------------------- |
+| `src`        | `string`                | **Required**       | URL of the image to display.                                     |
+| `alt`        | `string`                | `"Failed to load"` | Alternative text shown if the image fails to load.               |
+| `width`      | `number`                | **Required**       | Desired width of the image.                                      |
+| `height`     | `number`                | **Required**       | Desired height of the image.                                     |
+| `blurRadius` | `number`                | `10`               | Radius of the blur effect (not yet implemented in this version). |
+| `style`      | `StyleProp<ImageStyle>` | `undefined`        | Additional custom styles for the image.                          |
+| `className`  | `string`                | `undefined`        | TailwindCSS classes for styling.                                 |
 
 ---
 
@@ -123,7 +122,6 @@ The `blurRadius` prop is available but currently not implemented. To implement, 
 
 If you encounter any issues or have suggestions, please [open an issue](https://github.com/trendui/react-native/issues) on the repository.
 
----
 
 ## License
 
