@@ -2,7 +2,7 @@
 
 The `Avatar` component is a customizable React Native component designed to display a user's profile picture or fallback initials. It supports various shapes, sizes, themes, and advanced styling options.
 
----
+![Accordion Demo](https://res.cloudinary.com/dvuldqqyp/image/upload/v1737086961/final_atolqa.gif)
 
 ## Installation
 
@@ -116,5 +116,3 @@ For any issues or feature requests, please [open an issue](https://github.com/tr
 ## License
 
 The Avatar component is licensed under the **MIT License** as part of the TrendUI library.
-
----

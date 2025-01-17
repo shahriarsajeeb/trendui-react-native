@@ -2,7 +2,7 @@
 
 The `Badge` component is a versatile notification bubble that can be used alongside icons, images, or text to indicate statuses, notifications, or counts.
 
----
+![Accordion Demo](https://res.cloudinary.com/dvuldqqyp/image/upload/v1737087224/final_lwd6nz.gif)
 
 ## Installation
 ```bash
@@ -103,14 +103,18 @@ The `Badge` component supports Tailwind-style className for quick customization.
 </Badge>
 ```
 
----
-
 ## Customization Options
 
 - Use the `size` prop to change the badge size (`small`, `medium`, `large`).
 - Adjust `position` to place the badge on any corner of its container.
 - Apply Tailwind styles with `className` for granular customization.
 
+## Support
+
+For any issues or feature requests, please [open an issue](https://github.com/trend-ui/trendui-react-native/issues) in the repository.
+
 ---
 
-For more examples and use cases, refer to the library documentation. Happy coding! 🚀
+## License
+
+The Badge component is licensed under the **MIT License** as part of the TrendUI library.
