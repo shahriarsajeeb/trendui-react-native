@@ -181,7 +181,7 @@ export default function Header() {
               Home
             </Link>
             <Link
-              href="/docs"
+              href="/docs/introduction"
               className="flex items-center gap-2 text-lg text-zinc-200 hover:text-white"
               onClick={handleCloseMenu}
             >
