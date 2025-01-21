@@ -1,8 +1,8 @@
-import { Image, Text } from "@/trendui";
+import { Button, Image, Text } from "@/trendui";
 import { MaterialIcons } from "@expo/vector-icons";
 import { Link } from "expo-router";
 import React from "react";
-import { SafeAreaView, Button, View } from "react-native";
+import { SafeAreaView, TouchableOpacity, View } from "react-native";
 
 const LoginScreen = () => {
   const handleSignUpPress = () => {
@@ -37,34 +37,36 @@ const LoginScreen = () => {
 
         <View className="gap-4">
           <Button
+            value="Sign up"
             className="bg-blue-500 rounded-lg p-4 items-center"
             onPress={handleSignUpPress}
-          >
-            <Text className="text-white text-base font-semibold">Sign up</Text>
-          </Button>
+            textStyle={{ color: "white" }}
+          />
 
           <Button
-            className="flex-row items-center justify-center p-3 rounded-lg bg-white shadow-md gap-4"
+            value="Continue with Google"
+            className="flex-row items-center justify-center p-3 rounded-lg bg-white text-black shadow-md gap-4"
             onPress={handleGooglePress}
-          >
-            <Image
-              src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png"
-              width={25}
-              height={25}
-            />
-            <Text className="text-base text-black">Continue with Google</Text>
-          </Button>
+            icon={
+              <Image
+                src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png"
+                width={25}
+                height={25}
+              />
+            }
+          />
 
           <Button
-            className="flex-row items-center justify-center p-3 rounded-lg bg-white shadow-md gap-4"
+            value="Continue with Apple"
+            className="flex-row items-center justify-center p-3 rounded-lg bg-white text-black shadow-md gap-4"
             onPress={handleApplePress}
-          >
-            <MaterialIcons name="apple" size={30} color="#000000" />
-            <Text className="text-base text-black">Continue with Apple</Text>
-          </Button>
+            icon={<MaterialIcons name="apple" size={30} color="#000000" />}
+          />
 
-          <Link href={"/sign-in"} asChild>
-              <Text className="text-blue-500 text-base">Log in</Text>
+          <Link href={"/sign-in"}>
+            <Text className="text-center text-blue-500 font-semibold text-base">
+              Sign In
+            </Text>
           </Link>
         </View>
       </View>
