@@ -7,6 +7,7 @@ import {
   ViewStyle,
   TextStyle,
   StyleProp,
+  View,
 } from "react-native";
 import tw from "twrnc";
 
@@ -18,6 +19,8 @@ import tw from "twrnc";
  * @property {boolean} loading - If true, displays an activity indicator and disables the button.
  * @property {string} className - Optional. TailwindCSS classes for styling.
  * @property {boolean} animation - If true, enables the default touch animation.
+ * @property {React.ReactNode} icon - Optional. An icon to display alongside the button text.
+ * @property {"left" | "right"} iconPosition - Optional. The position of the icon relative to the text.
  */
 interface ButtonProps {
   value: string;
@@ -29,6 +32,8 @@ interface ButtonProps {
   style?: StyleProp<ViewStyle>;
   textStyle?: StyleProp<TextStyle>;
   className?: string;
+  icon?: React.ReactNode; // Add icon prop
+  iconPosition?: "left" | "right"; // Add icon position prop
 }
 
 /**
@@ -47,6 +52,8 @@ const Button: React.FC<ButtonProps> = ({
   style,
   textStyle,
   className,
+  icon,
+  iconPosition = "left", // Default to left position
 }) => {
   const getVariantStyles = (): StyleProp<ViewStyle> => {
     switch (variant) {
@@ -80,8 +87,37 @@ const Button: React.FC<ButtonProps> = ({
   const textStyles: StyleProp<TextStyle> = StyleSheet.flatten([
     styles.buttonText,
     textStyle,
-    tw`text-white`, // A default Tailwind class for text color
+    // tw`text-white`, // A default Tailwind class for text color
   ]);
+
+  const renderContent = () => {
+    if (loading) {
+      return <ActivityIndicator size="small" color="#FFF" />;
+    }
+
+    const textComponent = <Text style={textStyles}>{value}</Text>;
+    const iconComponent = icon && (
+      <View style={styles.iconContainer}>{icon}</View>
+    );
+
+    if (!icon) return textComponent;
+
+    return (
+      <View style={styles.contentContainer}>
+        {iconPosition === "left" ? (
+          <>
+            {iconComponent}
+            {textComponent}
+          </>
+        ) : (
+          <>
+            {textComponent}
+            {iconComponent}
+          </>
+        )}
+      </View>
+    );
+  };
 
   return (
     <TouchableOpacity
@@ -90,11 +126,7 @@ const Button: React.FC<ButtonProps> = ({
       disabled={disabled || loading}
       activeOpacity={animation ? 0.7 : 1} // Animation enabled when true
     >
-      {loading ? (
-        <ActivityIndicator size="small" color="#FFF" />
-      ) : (
-        <Text style={textStyles}>{value}</Text>
-      )}
+      {renderContent()}
     </TouchableOpacity>
   );
 };
@@ -124,7 +156,15 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 16,
-    color: "#ffffff",
+    // color: "#ffffff",
+  },
+  contentContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  iconContainer: {
+    marginHorizontal: 5,
   },
 });
 

@@ -2,7 +2,7 @@ import { Button, Text, TextInput } from "@/trendui";
 import { MaterialIcons } from "@expo/vector-icons";
 import { Link } from "expo-router";
 import React, { useState } from "react";
-import { TouchableOpacity, View } from "react-native";
+import { View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function SignUp() {
@@ -68,16 +68,14 @@ export default function SignUp() {
               className="mb-3"
               inputClassName="py-3 px-4 pr-12"
             />
-            <TouchableOpacity
-              className="absolute right-4 top-14"
+
+            <MaterialIcons
+              name={showPassword ? "visibility" : "visibility-off"}
+              size={24}
+              color="#666"
               onPress={() => setShowPassword(!showPassword)}
-            >
-              <MaterialIcons
-                name={showPassword ? "visibility" : "visibility-off"}
-                size={24}
-                color="#666"
-              />
-            </TouchableOpacity>
+              className="absolute right-4 top-14"
+            />
           </View>
 
           <View className="relative">
@@ -91,16 +89,13 @@ export default function SignUp() {
               className="mb-3"
               inputClassName="py-3 px-4 pr-12"
             />
-            <TouchableOpacity
-              className="absolute right-4 top-14"
+            <MaterialIcons
+              name={showPassword ? "visibility" : "visibility-off"}
+              size={24}
+              color="#666"
               onPress={() => setShowConfirmPassword(!showConfirmPassword)}
-            >
-              <MaterialIcons
-                name={showConfirmPassword ? "visibility" : "visibility-off"}
-                size={24}
-                color="#666"
-              />
-            </TouchableOpacity>
+              className="absolute right-4 top-14"
+            />
           </View>
 
           {/* Submit Button */}
@@ -117,6 +112,7 @@ export default function SignUp() {
               password !== confirmPassword
             }
             loading={isLoading}
+            textStyle={{ color: "white" }}
           />
 
           {/* Sign In Link */}

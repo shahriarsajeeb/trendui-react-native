@@ -2,7 +2,7 @@ import { Button, Checkbox, Text, TextInput } from "@/trendui";
 import { MaterialIcons } from "@expo/vector-icons";
 import { Link } from "expo-router";
 import React, { useState } from "react";
-import { TouchableOpacity, View } from "react-native";
+import { View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function SignIn() {
@@ -56,22 +56,21 @@ export default function SignIn() {
               className="mb-6"
               inputClassName="py-2 px-4 pr-12"
             />
-            <TouchableOpacity
-              className="absolute right-4 top-14"
-              onPress={() => setShowPassword(!showPassword)}
-            >
+           
               <MaterialIcons
                 name={showPassword ? "visibility" : "visibility-off"}
                 size={24}
                 color="#666"
+                onPress={() => setShowPassword(!showPassword)}
+                className="absolute right-4 top-14"
               />
-            </TouchableOpacity>
           </View>
 
           {/* Submit Button */}
           <Button
             value="Sign In"
             className="py-4 rounded-xl"
+            textStyle={{ color: "white" }}
             onPress={handleSubmit}
             disabled={isLoading || !email || !password}
             loading={isLoading}
