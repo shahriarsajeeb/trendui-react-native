@@ -4,12 +4,13 @@ import Link from "next/link";
 import { ChangeEvent, useEffect, useState } from "react";
 
 import {
+  ChevronDown,
   ChevronRight,
   Component,
-  FileText,
   Github,
   Home,
   Menu,
+  Rocket,
   Search,
   X,
 } from "lucide-react";
@@ -21,6 +22,7 @@ export default function Header() {
   const [stars, setStars] = useState<number | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [componentsData, setComponentsData] = useState<{ name: string }[]>([]);
+  const [componentsOpen, setComponentsOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
@@ -180,22 +182,82 @@ export default function Header() {
               <Home className="size-5" />
               Home
             </Link>
-            <Link
-              href="/docs/introduction"
-              className="flex items-center gap-2 text-lg text-zinc-200 hover:text-white"
-              onClick={handleCloseMenu}
-            >
-              <FileText className="size-5" />
-              Documentation
-            </Link>
-            <Link
-              href="/components"
-              className="flex items-center gap-2 text-lg text-zinc-200 hover:text-white"
-              onClick={handleCloseMenu}
-            >
-              <Component className="size-5" />
-              Components
-            </Link>
+            <div>
+              <div className="flex items-center gap-2 text-lg text-zinc-200 hover:text-white">
+                <Rocket className="size-5" />
+                <p>Getting Started</p>
+              </div>
+              <div className="ml-3 flex flex-col gap-3 border-l">
+                <Link
+                  href="/docs/introduction"
+                  className="ml-6 mt-2 flex items-center gap-2 text-zinc-200 hover:text-white"
+                  onClick={handleCloseMenu}
+                >
+                  Introduction
+                </Link>
+                <Link
+                  href="/docs/installation"
+                  className="ml-6 mt-2 flex items-center gap-2 text-zinc-200 hover:text-white"
+                  onClick={handleCloseMenu}
+                >
+                  Installation
+                </Link>
+                <Link
+                  href="/docs/cli"
+                  className="ml-6 mt-2 flex items-center gap-2 text-zinc-200 hover:text-white"
+                  onClick={handleCloseMenu}
+                >
+                  CLI
+                </Link>
+              </div>
+            </div>
+            <div>
+              <button
+                onClick={() => setComponentsOpen(!componentsOpen)}
+                className="flex w-full items-center justify-between text-lg text-zinc-200 hover:text-white"
+              >
+                <div className="flex items-center gap-2">
+                  <Component className="size-5" />
+                  Components
+                </div>
+                <ChevronDown
+                  className={`size-4 transition-transform duration-200 ${
+                    componentsOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+              <div
+                className={`mt-1 overflow-hidden transition-all duration-200 ${
+                  componentsOpen
+                    ? "max-h-[500px] opacity-100"
+                    : "max-h-0 opacity-0"
+                }`}
+              >
+                <ul className="ml-3 space-y-1 border-l">
+                  {filteredComponents.length > 0 ? (
+                    filteredComponents.map((component) => (
+                      <li key={component.name}>
+                        <Link
+                          href={`/docs/components/${component.name}`}
+                          onClick={handleCloseMenu}
+                          className="ml-3 flex w-full items-center justify-between rounded-md px-3 py-2 text-left hover:bg-zinc-800"
+                        >
+                          <span className="text-zinc-200">
+                            {component.name}
+                          </span>
+                        </Link>
+                      </li>
+                    ))
+                  ) : (
+                    <li>
+                      <div className="px-3 py-2 text-center text-xs text-zinc-400">
+                        No components found
+                      </div>
+                    </li>
+                  )}
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>

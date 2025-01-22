@@ -19,7 +19,7 @@ export default function DocsLayout({ children }: DocsLayoutProps) {
         </aside>
 
         {/* Main Content */}
-        <main className="flex-1 p-4 sm:p-6 lg:p-8">
+        <main className="mt-5 flex-1 p-4 sm:p-6 lg:mt-0 lg:p-8">
           {/* <SiteHeader /> */}
           <div className="container mx-auto max-w-full py-6 sm:max-w-3xl lg:py-10">
             {children}
