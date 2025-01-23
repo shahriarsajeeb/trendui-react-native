@@ -2,7 +2,7 @@
 
 A reusable and customizable Radio Button Group component for React Native. This component allows users to select one option from a list of radio buttons and supports custom styles, accessibility, and various button configurations.
 
-![Tabs Demo](https://res.cloudinary.com/dwdivu60a/video/upload/v1737624258/RadioButton_Preview.mp4)
+![Tabs Demo](https://res.cloudinary.com/dwdivu60a/image/upload/v1737625508/qzae2eru7eovrm7bvzaf.gif)
 
 ## Installation
 
