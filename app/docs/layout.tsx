@@ -17,7 +17,6 @@ export default function DocsLayout({ children }: DocsLayoutProps) {
             <Sidebar />
           </ScrollArea>
         </aside>
-
         {/* Main Content */}
         <main className="mt-5 flex-1 p-4 sm:p-6 lg:mt-0 lg:p-8">
           {/* <SiteHeader /> */}
