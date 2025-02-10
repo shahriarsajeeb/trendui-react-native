@@ -57,6 +57,11 @@ const AVAILABLE_COMPONENTS = {
     description: "Card component",
     dependencies: [],
   },
+  radiobutton: {
+    name: "Radio Button",
+    description: "RadioButton component",
+    dependencies: [],
+  },
   // card: {
   //   name: "Card",
   //   description: "Container component with shadow and border radius",
